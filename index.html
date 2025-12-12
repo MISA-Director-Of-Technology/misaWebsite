@@ -5,23 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSUN MISA</title>
     <style>
-        html {padding:0;margin:0;}
+        /*preloader misa logo*/
+                #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(./pictures/misabackground.png); /* Preloader background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 1s ease; /* smooth fade */
+        }
 
-        nav {background-color: #B4361D; color:red;}
-        li {float:left;padding: 10px;list-style-type: none;}
+        #preloader img {
+            height: 500px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeSlide 2s ease-in-out forwards; /* smooth easing */
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity:  0; transform: translateY(50px); }
+            25% { opacity: 1; transform: translateY(0px); }
+            50% { opacity: 1; transform: translateY(0px); }
+            75% { opacity: 1; transform: translateY(0px); }
+            90% { opacity: 1; transform: translateY(0px); }
+            100% { opacity:0; transform: translateY(-40px); }
+        }
+
+        #preloader.hide {
+            opacity: 0;
+            transition: opacity 20s ease;
+            pointer-events: none;
+        }
+
+
+        /*narbar*/
+        html { padding:0; margin:0;}
+        html { background-color:#E7E7E7; }
+        nav  { overflow: hidden; height: 100px;}
+        li   { float:right; padding: 10px; list-style-type: none;}
+        ul   { padding:10px; padding-top: 10px; font-size:20px; }
+        .misalogo{ float:left; height: 100px; height: 100px;}
+
+        /*this is the body*/
+        .welcomeBox  {display: flex;border: black,10px,solid; background: #333358;color: white; height: 200px}
+        .welcomeBox1 {width: 50%; height: 25%; font-family: Arial, Helvetica, sans-serif; font-size: 50px;padding-top: 60px;padding-left: 15%;}
+        .welcomeBox2 {width: 50%; height: 25%;padding-top: 60px;padding-left: 15%px}
+
+
 
     </style>
+    <script>
+        window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+
+        // Fade out
+        preloader.classList.add("hide");
+
+        // Optionally remove element after animation
+        setTimeout(() => preloader.remove(), 2000);
+        });
+
+    </script>
+    
     <nav>
+        <img src="./pictures/misalogo.png" alt="Clublogo" class="misalogo">
         <ul>
-            <li>Home</li>
-            <li>MISA Events</li>
-            <li>Join</li>
-            <li>MISA Team</li>
             <li>More</li>
+            <li>MISA Team</li>
+            <li>Join</li>
+            <li>MISA Events</li>
+            <li>Home</li>
+            
+            
         </ul>
     </nav>
 </head>
 <body>
+    <div id="preloader">
+        <img src="./pictures/misalogo.png">
+    </div>
+    <div class="welcomeBox">
+        <div class="welcomeBox1">
+            WELCOME <br> TO CSUN MISA
+        </div>
+        <div class="welcomeBox2">
+            <p>MISA is a student-led organization within the David Nazarian College of Business and Economics, dedicated to bridging the gap between technology and business by providing members with opportunities to develop both technical and professional skills through industry networking, workshops, and exposure to various IT career paths.</p>
+        </div>
+    </div>
 
     <!-- Content goes here -->
 
