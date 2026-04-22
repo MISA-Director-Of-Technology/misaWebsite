@@ -1,109 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>CSUN MISA</title>
-    <style>
-        /*preloader misa logo*/
-                #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url(./pictures/misabackground.png); /* Preloader background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-            transition: opacity 1s ease; /* smooth fade */
-        }
-
-        #preloader img {
-            height: 500px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeSlide 2s ease-in-out forwards; /* smooth easing */
-        }
-
-        @keyframes fadeSlide {
-            0% { opacity:  0; transform: translateY(50px); }
-            25% { opacity: 1; transform: translateY(0px); }
-            50% { opacity: 1; transform: translateY(0px); }
-            75% { opacity: 1; transform: translateY(0px); }
-            90% { opacity: 1; transform: translateY(0px); }
-            100% { opacity:0; transform: translateY(-40px); }
-        }
-
-        #preloader.hide {
-            opacity: 0;
-            transition: opacity 20s ease;
-            pointer-events: none;
-        }
-
-
-        /*narbar*/
-        html { padding:0; margin:0;}
-        html { background-color:#E7E7E7; }
-        nav  { overflow: hidden; height: 100px;}
-        li   { float:right; padding: 10px; list-style-type: none;}
-        ul   { padding:10px; padding-top: 10px; font-size:20px; }
-        .misalogo{ float:left; height: 100px; height: 100px;}
-
-        /*this is the body*/
-        .welcomeBox  {display: flex;border: black,10px,solid; background: #333358;color: white; height: 200px}
-        .welcomeBox1 {width: 50%; height: 25%; font-family: Arial, Helvetica, sans-serif; font-size: 50px;padding-top: 60px;padding-left: 15%;}
-        .welcomeBox2 {width: 50%; height: 25%;padding-top: 60px;padding-left: 15%px}
-
-
-
-    </style>
-    <script>
-        window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-
-        // Fade out
-        preloader.classList.add("hide");
-
-        // Optionally remove element after animation
-        setTimeout(() => preloader.remove(), 2000);
-        });
-
-    </script>
-    
-    <nav>
-        <img src="./pictures/misalogo.png" alt="Clublogo" class="misalogo">
-        <ul>
-            <li>More</li>
-            <li>MISA Team</li>
-            <li>Join</li>
-            <li>MISA Events</li>
-            <li>Home</li>
-            
-            
-        </ul>
-    </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="./pictures/misaTab.png">
 </head>
 <body>
-    <div id="preloader">
-        <img src="./pictures/misalogo.png">
-    </div>
-    <div class="welcomeBox">
-        <div class="welcomeBox1">
-            WELCOME <br> TO CSUN MISA
-        </div>
-        <div class="welcomeBox2">
-            <p>MISA is a student-led organization within the David Nazarian College of Business and Economics, dedicated to bridging the gap between technology and business by providing members with opportunities to develop both technical and professional skills through industry networking, workshops, and exposure to various IT career paths.</p>
-        </div>
+
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="./pictures/misalogo.png" class="logo-img">
+        <span class="logo-text">CSUN MISA</span>
     </div>
 
-    <!-- Content goes here -->
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="#join" class="btn">Join</a></li>
+    </ul>
+</nav>
 
-    <footer>
-        <!-- Footer content -->
-    </footer>
+<section class="hero">
+    <h1>Management Information Systems Association</h1>
+    <p>Empowering CSUN students through technology and business.</p>
+</section>
+
+<section class="section">
+    <h2>About Us</h2>
+    <p>
+            Management Information Systems Association (MISA) at the David Nazarian College of Business and Economics at CSUN is a non-profit student
+            organization open to all students interested in the information systems industry. We aspire to showcase the best of what IS/IT has to offer
+             in the business world to empower ambitious students as they transition from the classroom into the industry as professionals.
+
+            MISA offers beneficial outreach opportunities that enhance a student’s education in the form of weekly meetings  with speakers from a variety
+            of employers that present to our students about technical topics and career paths including Data Analytics, Systems Analysis, IT Security,
+            IT Audit, Commercial IT, Tech Support, etc.
+        </p>
+        <p>
+            We host weekly meetings, professional workshops, networking opportunities, and
+            guest speakers in Data Analytics, Cybersecurity, IT Audit, and Systems Analysis.
+        </p>
+</section>
+
+<section id="join" class="section gray">
+    <h2>Join MISA</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJVS30VmYP8eO8_oImfTahxI42_xkdL2H8uiAAXO4Fh0Rw9Q/viewform?usp=sharing&ouid=106857934661592109614" target="_blank" class="btn large">Join today</a>
+</section>
+
+<footer>
+    <p>© 2026 CSUN MISA</p>
+</footer>
+
 </body>
 </html>
-
