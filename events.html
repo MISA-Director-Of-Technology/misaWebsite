@@ -18,6 +18,65 @@
 
         .section {
             flex: 1;
+            padding: 60px 40px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .event-card-content {
+            padding: 22px;
+        }
+
+        .event-card-content h4 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            font-size: 20px;
+        }
+
+        .event-card-content p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-card img {
+                height: 260px;
+            }
         }
     </style>
 </head>
@@ -43,19 +102,13 @@
 
     <h2>Events & Announcements</h2>
 
-    <div class="announcement">
+    <div class="events-grid">
 
-
-        <!-- XYPRO Guest Speaker Event -->
-
-        <div class="announcement-content">
-
+        <div class="event-card">
             <img src="./events/xypro_guest_speaker_2025.jpeg"
-                 alt="XYPRO Guest Speaker Event"
-                 class="announcement-img">
+                 alt="XYPRO Guest Speaker Event">
 
-            <div class="announcement-text">
-
+            <div class="event-card-content">
                 <h4>XYPRO Guest Speaker - Steve Tcherchian, CEO</h4>
 
                 <p>
@@ -65,27 +118,15 @@
                     participated in engaging discussions, and learned from
                     Steve's professional experience.
                 </p>
-
-                <p>November 6, 2025</p>
-
             </div>
-
         </div>
 
 
-        <br>
-
-
-        <!-- Google AI Tech Meeting -->
-
-        <div class="announcement-content">
-
+        <div class="event-card">
             <img src="./events/google_ai_tech_meeting.jpeg"
-                 alt="Google AI Tech Meeting"
-                 class="announcement-img">
+                 alt="Google AI Tech Meeting">
 
-            <div class="announcement-text">
-
+            <div class="event-card-content">
                 <h4>Google AI Tech Meeting - Ale Nijamkin</h4>
 
                 <p>
@@ -94,25 +135,15 @@
                     insights into AI, participated in discussion, and learned
                     more about its growing role in today's technology landscape.
                 </p>
-
             </div>
-
         </div>
 
 
-        <br>
-
-
-        <!-- MISA Community -->
-
-        <div class="announcement-content">
-
+        <div class="event-card">
             <img src="./events/misa_student_community.jpeg"
-                 alt="MISA Student Community"
-                 class="announcement-img">
+                 alt="MISA Student Community">
 
-            <div class="announcement-text">
-
+            <div class="event-card-content">
                 <h4>MISA Community & Student Engagement</h4>
 
                 <p>
@@ -122,11 +153,8 @@
                     members have opportunities to connect with peers, explore the
                     industry, and grow together as a community.
                 </p>
-
             </div>
-
         </div>
-
 
     </div>
 
@@ -136,7 +164,6 @@
 <footer>
     <p>© 2026 CSUN MISA</p>
 </footer>
-
 
 </body>
 </html>
