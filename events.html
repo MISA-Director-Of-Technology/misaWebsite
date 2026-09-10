@@ -16,66 +16,179 @@
             flex-direction: column;
         }
 
-        .section {
+        .events-page {
             flex: 1;
-            padding: 60px 40px;
+            padding: 70px 45px 60px;
+            max-width: 1250px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
 
-        .section h2 {
-            text-align: center;
-            margin-bottom: 40px;
+        /* Top intro */
+        .events-label {
+            color: #d7193f;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .events-title {
+            font-size: 58px;
+            line-height: 1.05;
+            margin: 0 0 14px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .events-title span {
+            color: #d7193f;
+        }
+
+        .events-intro {
+            max-width: 650px;
+            font-size: 18px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .red-line {
+            width: 58px;
+            height: 4px;
+            background: #d7193f;
+            border-radius: 10px;
+            margin-top: 24px;
+        }
+
+        /* Past Events */
+        .past-events {
+            margin-top: 65px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-left: 5px solid #d7193f;
+            padding-left: 12px;
+        }
+
+        .past-events h2 {
+            font-size: 38px;
+            margin: 0 0 8px;
+        }
+
+        .past-events-subtitle {
+            margin: 0 0 30px;
+            font-size: 17px;
         }
 
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
         }
 
         .event-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .event-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
         }
 
         .event-card img {
             width: 100%;
-            height: 240px;
+            height: 270px;
             object-fit: cover;
             display: block;
         }
 
-        .event-card-content {
-            padding: 22px;
+        .event-info {
+            padding: 18px 20px 20px;
         }
 
-        .event-card-content h4 {
-            margin-top: 0;
-            margin-bottom: 14px;
+        .event-info h3 {
+            margin: 0 0 7px;
             font-size: 20px;
         }
 
-        .event-card-content p {
+        .event-info p {
             margin: 0;
-            line-height: 1.6;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
-        @media (max-width: 900px) {
+        /* Instagram */
+        .instagram-box {
+            margin-top: 55px;
+            background: #fff1f3;
+            border-radius: 16px;
+            padding: 35px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .instagram-text small {
+            color: #d7193f;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .instagram-text h2 {
+            margin: 7px 0;
+            font-size: 32px;
+        }
+
+        .instagram-text p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .instagram-button {
+            display: inline-block;
+            background: #d7193f;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .instagram-button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 800px) {
+            .events-page {
+                padding: 50px 22px;
+            }
+
+            .events-title {
+                font-size: 42px;
+            }
+
             .events-grid {
                 grid-template-columns: 1fr;
             }
 
             .event-card img {
-                height: 260px;
+                height: 240px;
+            }
+
+            .instagram-box {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -98,67 +211,107 @@
 </nav>
 
 
-<section class="section">
+<main class="events-page">
 
-    <h2>Events & Announcements</h2>
+    <section>
+        <div class="events-label">Events & Announcements</div>
 
-    <div class="events-grid">
+        <h1 class="events-title">
+            Connect. Learn. <span>Grow.</span>
+        </h1>
 
-        <div class="event-card">
-            <img src="./events/xypro_guest_speaker_2025.jpeg"
-                 alt="XYPRO Guest Speaker Event">
+        <p class="events-intro">
+            From industry speakers to technical meetings and socials,
+            explore how MISA creates opportunities to learn, build connections,
+            and be part of a growing community.
+        </p>
 
-            <div class="event-card-content">
-                <h4>XYPRO Guest Speaker - Steve Tcherchian, CEO</h4>
+        <div class="red-line"></div>
+    </section>
 
-                <p>
-                    MISA welcomed Steve Tcherchian, CEO of XYPRO, for a guest
-                    speaker session focused on leadership, cybersecurity, and
-                    innovation. Students gained valuable industry insights,
-                    participated in engaging discussions, and learned from
-                    Steve's professional experience.
-                </p>
+
+    <section class="past-events">
+
+        <div class="section-label">Past Events</div>
+
+        <h2>Look Back at What We've Done</h2>
+
+        <p class="past-events-subtitle">
+            Take a look at some of our recent events and highlights.
+        </p>
+
+
+        <div class="events-grid">
+
+            <div class="event-card">
+                <img src="./events/xypro_guest_speaker_2025.jpeg"
+                     alt="XYPRO Guest Speaker">
+
+                <div class="event-info">
+                    <h3>XYPRO Guest Speaker</h3>
+                    <p>Leadership, cybersecurity & industry insights.</p>
+                </div>
             </div>
+
+
+            <div class="event-card">
+                <img src="./events/google_ai_tech_meeting.jpeg"
+                     alt="Google AI Tech Meeting">
+
+                <div class="event-info">
+                    <h3>Google AI Tech Meeting</h3>
+                    <p>Exploring AI, technology & industry trends.</p>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <img src="./events/misa_student_community.jpeg"
+                     alt="MISA Community Event">
+
+                <div class="event-info">
+                    <h3>MISA Community Event</h3>
+                    <p>Connecting students and building community.</p>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <img src="./events/evening_with_industry.png"
+                     alt="Evening with Industry">
+
+                <div class="event-info">
+                    <h3>Evening with Industry</h3>
+                    <p>Networking, recognition & industry connections.</p>
+                </div>
+            </div>
+
         </div>
 
+    </section>
 
-        <div class="event-card">
-            <img src="./events/google_ai_tech_meeting.jpeg"
-                 alt="Google AI Tech Meeting">
 
-            <div class="event-card-content">
-                <h4>Google AI Tech Meeting - Ale Nijamkin</h4>
+    <section class="instagram-box">
 
-                <p>
-                    MISA welcomed Ale Nijamkin from Google for a tech meeting
-                    focused on artificial intelligence. Students explored
-                    insights into AI, participated in discussion, and learned
-                    more about its growing role in today's technology landscape.
-                </p>
-            </div>
+        <div class="instagram-text">
+            <small>STAY CONNECTED</small>
+            <h2>Follow Us on Instagram</h2>
+            <p>
+                Get the latest event updates, meeting reminders,
+                and behind-the-scenes moments.
+            </p>
         </div>
 
+        <a class="instagram-button"
+           href="https://www.instagram.com/csunmisa"
+           target="_blank"
+           rel="noopener noreferrer">
+            Follow @csunmisa →
+        </a>
 
-        <div class="event-card">
-            <img src="./events/misa_student_community.jpeg"
-                 alt="MISA Student Community">
+    </section>
 
-            <div class="event-card-content">
-                <h4>MISA Community & Student Engagement</h4>
-
-                <p>
-                    MISA brings together CSUN students interested in information
-                    systems, technology, and professional development. Through
-                    technical meetings, guest speakers, and collaborative events,
-                    members have opportunities to connect with peers, explore the
-                    industry, and grow together as a community.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
+</main>
 
 
 <footer>
