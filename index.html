@@ -17,84 +17,67 @@
             margin: 0;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================== */
 
         .home-hero {
-            display: grid;
-            grid-template-columns: 80% 20%;
-            min-height: 520px;
+            position: relative;
+            height: 540px;
+            background-image: url("./pictures/group_photo_fall_2026.jpeg");
+            background-size: cover;
+            background-position: center 45%;
             overflow: hidden;
         }
 
-        .hero-group {
-            position: relative;
-
-            background-image:
-                linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0.62) 0%,
-                    rgba(0, 0, 0, 0.45) 22%,
-                    rgba(0, 0, 0, 0.20) 40%,
-                    rgba(0, 0, 0, 0.05) 65%,
-                    rgba(0, 0, 0, 0.00) 100%
-                ),
-                url("./pictures/group_photo_fall_2026.jpeg");
-
-            background-size: cover;
-            background-position: center 42%;
-            display: flex;
-            align-items: flex-start;
+        /* Dark fade ONLY at bottom */
+        .home-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 45%,
+                rgba(0, 0, 0, 0.18) 65%,
+                rgba(0, 0, 0, 0.82) 100%
+            );
         }
 
         .hero-content {
-            color: white;
-            width: 430px;
-            margin-left: 4.5%;
-            margin-top: 75px;
+            position: absolute;
+            left: 40px;
+            right: 40px;
+            bottom: 20px;
             z-index: 2;
+            color: white;
+            text-align: center;
         }
 
         .hero-content h1 {
-            margin: 0 0 18px;
-            font-size: 44px;
-            line-height: 1.08;
-            font-weight: 800;
+            margin: 0 0 7px;
             color: white;
+            font-size: 38px;
+            line-height: 1.1;
+            font-weight: 800;
         }
 
         .hero-content p {
-            margin: 0 0 24px;
+            margin: 0;
+            color: white;
             font-size: 17px;
             line-height: 1.5;
-            max-width: 340px;
         }
 
-        .hero-join {
-            display: inline-block;
-            background: #e31837;
-            color: white;
-            text-decoration: none;
-            padding: 13px 22px;
-            border-radius: 7px;
-            font-weight: 600;
-        }
 
-        .hero-join:hover {
-            opacity: 0.9;
-        }
-
-        .hero-building {
-            background-image: url("./pictures/csun_building.jpg");
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================== */
 
         .about-home {
             max-width: 1200px;
             margin: 0 auto;
             padding: 70px 45px;
+
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
             gap: 70px;
@@ -125,7 +108,10 @@
             margin: 0 0 16px;
         }
 
-        /* HIGHLIGHTS */
+
+        /* =========================
+           HIGHLIGHTS
+        ========================== */
 
         .misa-highlights {
             display: flex;
@@ -144,6 +130,7 @@
             height: 52px;
             border-radius: 50%;
             background: #fff0f3;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -168,7 +155,10 @@
             color: #444;
         }
 
-        /* JOIN CTA */
+
+        /* =========================
+           JOIN
+        ========================== */
 
         .join-wrapper {
             max-width: 1200px;
@@ -181,6 +171,7 @@
             background: #fff1f3;
             border-radius: 16px;
             padding: 38px 42px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -220,38 +211,49 @@
             opacity: 0.9;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 900px) {
 
             .home-hero {
-                grid-template-columns: 1fr;
-                min-height: auto;
+                height: 430px;
+                background-position: center top;
             }
 
-            .hero-group {
-                min-height: 500px;
-                background-position: center;
-            }
-
-            .hero-building {
-                display: none;
+            .home-hero::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0) 35%,
+                    rgba(0, 0, 0, 0.25) 55%,
+                    rgba(0, 0, 0, 0.88) 100%
+                );
             }
 
             .hero-content {
-                width: 300px;
-                margin-left: 26px;
-                margin-top: 60px;
+                left: 20px;
+                right: 20px;
+                bottom: 22px;
             }
 
             .hero-content h1 {
-                font-size: 36px;
+                font-size: 27px;
+                line-height: 1.12;
+                margin-bottom: 9px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+                max-width: 340px;
+                margin: 0 auto;
             }
 
             .about-home {
                 grid-template-columns: 1fr;
-                padding: 55px 25px;
-                gap: 40px;
+                padding: 50px 25px;
+                gap: 38px;
             }
 
             .about-copy {
@@ -259,24 +261,80 @@
                 padding-right: 0;
             }
 
+            .about-copy h2 {
+                font-size: 32px;
+            }
+
+            .misa-highlights {
+                gap: 24px;
+            }
+
+            .highlight-icon {
+                min-width: 45px;
+                height: 45px;
+            }
+
+            .highlight-icon::after {
+                width: 12px;
+                height: 12px;
+            }
+
             .join-wrapper {
-                padding: 0 25px;
+                padding: 0 20px;
+                margin-bottom: 45px;
             }
 
             .join-home {
+                padding: 28px 24px;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
+                gap: 22px;
+            }
+
+            .join-copy h2 {
+                font-size: 27px;
+            }
+
+            .join-button {
+                text-align: center;
             }
         }
+
+
+        /* Smaller phones */
+
+        @media (max-width: 480px) {
+
+            .home-hero {
+                height: 390px;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+            }
+
+            .about-home {
+                padding: 42px 20px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
+
+
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
     <div class="logo-container">
-        <img src="./pictures/misalogo.png" class="logo-img">
+        <img src="./pictures/misalogo.png" class="logo-img" alt="MISA Logo">
         <span class="logo-text">CSUN MISA</span>
     </div>
 
@@ -290,33 +348,26 @@
 </nav>
 
 
+<!-- HERO -->
+
 <section class="home-hero">
 
-    <div class="hero-group">
+    <div class="hero-content">
 
-        <div class="hero-content">
+        <h1>
+            Management Information Systems Association
+        </h1>
 
-            <h1>
-                Management Information<br>
-                Systems Association
-            </h1>
-
-            <p>
-                Empowering CSUN students through technology and business.
-            </p>
-
-            <a href="#join" class="hero-join">
-                Join MISA →
-            </a>
-
-        </div>
+        <p>
+            Empowering CSUN students through technology and business.
+        </p>
 
     </div>
 
-    <div class="hero-building"></div>
-
 </section>
 
+
+<!-- ABOUT -->
 
 <section class="about-home">
 
@@ -350,6 +401,7 @@
 
             <div>
                 <h3>Professional Development</h3>
+
                 <p>
                     Gain real-world insights from industry professionals.
                 </p>
@@ -364,6 +416,7 @@
 
             <div>
                 <h3>Technical Learning</h3>
+
                 <p>
                     Explore data analytics, cybersecurity,
                     IT audit, systems analysis, and more.
@@ -379,6 +432,7 @@
 
             <div>
                 <h3>Networking Opportunities</h3>
+
                 <p>
                     Build connections with students,
                     alumni, and industry professionals.
@@ -391,6 +445,8 @@
 
 </section>
 
+
+<!-- JOIN -->
 
 <section id="join" class="join-wrapper">
 
@@ -408,6 +464,7 @@
 
         </div>
 
+
         <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfJVS30VmYP8eO8_oImfTahxI42_xkdL2H8uiAAXO4Fh0Rw9Q/viewform?usp=sharing&ouid=106857934661592109614"
             target="_blank"
@@ -421,9 +478,12 @@
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
     <p>© 2026 CSUN MISA</p>
 </footer>
+
 
 </body>
 </html>
