@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Careers | CSUN MISA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="./pictures/misaTab.png">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* HERO */
+        .careers-hero {
+            min-height: 420px;
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.92) 0%,
+                    rgba(255,255,255,0.75) 30%,
+                    rgba(255,255,255,0.15) 60%,
+                    rgba(255,255,255,0) 100%
+                ),
+                url("./pictures/csun_building_careers.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .careers-hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 45px;
+            box-sizing: border-box;
+        }
+
+        .careers-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .careers-hero h1 {
+            font-size: 52px;
+            line-height: 1.05;
+            margin: 0 0 18px;
+        }
+
+        .careers-hero h1 span {
+            color: #e31837;
+        }
+
+        .careers-hero p {
+            max-width: 520px;
+            font-size: 17px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* COMPANIES SECTION */
+        .career-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 65px 40px;
+            box-sizing: border-box;
+        }
+
+        .red-line {
+            width: 48px;
+            height: 4px;
+            background: #e31837;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+
+        .career-content h2 {
+            font-size: 36px;
+            margin: 0 0 10px;
+        }
+
+        .career-intro {
+            max-width: 700px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+            margin: 0 0 35px;
+        }
+
+        .companies-graphic {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* JOIN SECTION */
+        .join-wrapper {
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        .career-join {
+            background: #fff1f3;
+            border-radius: 16px;
+            padding: 38px 42px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .career-join h2 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        .career-join p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .join-button {
+            background: #e31837;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .join-button:hover {
+            opacity: 0.9;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .careers-hero {
+                min-height: 350px;
+
+                background-image:
+                    linear-gradient(
+                        rgba(255,255,255,0.78),
+                        rgba(255,255,255,0.78)
+                    ),
+                    url("./pictures/csun_building_careers.jpeg");
+
+                background-position: center;
+            }
+
+            .careers-hero-content {
+                padding: 45px 24px;
+            }
+
+            .careers-hero h1 {
+                font-size: 39px;
+            }
+
+            .careers-hero p {
+                font-size: 16px;
+            }
+
+            .career-content {
+                padding: 48px 24px;
+            }
+
+            .career-content h2 {
+                font-size: 29px;
+            }
+
+            .join-wrapper {
+                padding: 0 20px;
+            }
+
+            .career-join {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 24px;
+            }
+
+            .join-button {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+    <div class="logo-container">
+        <img
+            src="./pictures/misalogo.png"
+            class="logo-img"
+            alt="MISA Logo">
+
+        <span class="logo-text">CSUN MISA</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="index.html#join" class="btn">Join</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- CAREERS HERO -->
+<section class="careers-hero">
+
+    <div class="careers-hero-content">
+
+        <div class="careers-label">
+            Career Opportunities
+        </div>
+
+        <h1>
+            Real Opportunities.<br>
+            <span>Real Impact.</span>
+        </h1>
+
+        <p>
+            See where MISA members and alumni have interned,
+            worked, and continued building their careers.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MEMBER / ALUMNI CAREERS -->
+<section class="career-content">
+
+    <div class="red-line"></div>
+
+    <h2>Where Our Members & Alumni Are Now</h2>
+
+    <p class="career-intro">
+        From internships to full-time roles, MISA members and alumni
+        have pursued opportunities across a variety of companies and industries.
+    </p>
+
+    <img
+        src="./pictures/member_career_companies.png"
+        class="companies-graphic"
+        alt="Companies where MISA members and alumni have worked or interned">
+
+</section>
+
+
+<!-- JOIN -->
+<section class="join-wrapper">
+
+    <div class="career-join">
+
+        <div>
+            <h2>Have we caught your attention?</h2>
+
+            <p>
+                Join MISA and see where your next opportunity could take you.
+            </p>
+        </div>
+
+        <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScq6v15FR52yysf7nASGjLbpA6NlcWWprDuV7j_1yjIT6qK6A/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="join-button">
+            Join MISA →
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 CSUN MISA</p>
+</footer>
+
+</body>
+</html>
