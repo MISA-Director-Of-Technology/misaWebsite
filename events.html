@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Events | CSUN MISA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/png" href="./pictures/misaTab.png">
 
@@ -25,7 +27,7 @@
             box-sizing: border-box;
         }
 
-        /* Top intro */
+        /* TOP INTRO */
         .events-label {
             color: #d7193f;
             font-size: 14px;
@@ -62,9 +64,77 @@
             margin-top: 24px;
         }
 
-        /* Past Events */
+
+        /* UPCOMING EVENT */
+        .upcoming-event {
+            margin-top: 55px;
+            background: #fff1f3;
+            border-radius: 16px;
+            padding: 35px 40px;
+        }
+
+        .upcoming-label {
+            color: #d7193f;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .upcoming-event h2 {
+            font-size: 32px;
+            margin: 0 0 5px;
+            color: #222;
+        }
+
+        .upcoming-event h3 {
+            font-size: 18px;
+            margin: 0 0 12px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .upcoming-description {
+            max-width: 700px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.55;
+            margin: 0 0 25px;
+        }
+
+        .event-details {
+            display: flex;
+            gap: 15px;
+        }
+
+        .event-detail {
+            background: white;
+            border-radius: 10px;
+            padding: 16px 20px;
+            flex: 1;
+        }
+
+        .detail-title {
+            display: block;
+            color: #d7193f;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .detail-info {
+            color: #222;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+
+        /* PAST EVENTS */
         .past-events {
-            margin-top: 65px;
+            margin-top: 55px;
             padding-top: 40px;
             border-top: 1px solid #ddd;
         }
@@ -125,7 +195,8 @@
             line-height: 1.5;
         }
 
-        /* Instagram */
+
+        /* INSTAGRAM */
         .instagram-box {
             margin-top: 55px;
             background: #fff1f3;
@@ -169,14 +240,30 @@
             opacity: 0.9;
         }
 
-        /* Mobile */
+
+        /* MOBILE */
         @media (max-width: 800px) {
+
             .events-page {
                 padding: 50px 22px;
             }
 
             .events-title {
                 font-size: 42px;
+            }
+
+            .upcoming-event {
+                padding: 28px 24px;
+                margin-top: 40px;
+            }
+
+            .upcoming-event h2 {
+                font-size: 28px;
+            }
+
+            .event-details {
+                flex-direction: column;
+                gap: 10px;
             }
 
             .events-grid {
@@ -198,8 +285,12 @@
 <body>
 
 <nav class="navbar">
+
     <div class="logo-container">
-        <img src="./pictures/misalogo.png" class="logo-img">
+        <img src="./pictures/misalogo.png"
+             class="logo-img"
+             alt="MISA Logo">
+
         <span class="logo-text">CSUN MISA</span>
     </div>
 
@@ -210,6 +301,7 @@
         <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#join" class="btn">Join</a></li>
     </ul>
+
 </nav>
 
 
@@ -217,7 +309,10 @@
 
     <!-- INTRO -->
     <section>
-        <div class="events-label">Events & Announcements</div>
+
+        <div class="events-label">
+            Events & Announcements
+        </div>
 
         <h1 class="events-title">
             Connect. Learn. <span>Grow.</span>
@@ -230,13 +325,54 @@
         </p>
 
         <div class="red-line"></div>
+
+    </section>
+
+
+    <!-- UPCOMING EVENT -->
+    <section class="upcoming-event">
+
+        <div class="upcoming-label">
+            Upcoming Event
+        </div>
+
+        <h2>Tech Meeting</h2>
+
+        <h3>Alan Sugano — ADS Consulting Group</h3>
+
+        <p class="upcoming-description">
+            Join us to learn about cybersecurity, IT risk management,
+            cloud and virtualization strategies, and real-world disaster recovery.
+        </p>
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span class="detail-title">Date</span>
+                <span class="detail-info">September 22</span>
+            </div>
+
+            <div class="event-detail">
+                <span class="detail-title">Time</span>
+                <span class="detail-info">2:30 PM – 4:00 PM</span>
+            </div>
+
+            <div class="event-detail">
+                <span class="detail-title">Location</span>
+                <span class="detail-info">BB 4117</span>
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- PAST EVENTS -->
     <section class="past-events">
 
-        <div class="section-label">Past Events</div>
+        <div class="section-label">
+            Past Events
+        </div>
 
         <h2>Look Back at What We've Done</h2>
 
@@ -246,51 +382,72 @@
 
         <div class="events-grid">
 
+
             <!-- XYPRO -->
             <div class="event-card">
-                <img src="./events/xypro_guest_speaker_2025.jpeg"
-                     alt="XYPRO Guest Speaker">
+
+                <img
+                    src="./events/xypro_guest_speaker_2025.jpeg"
+                    alt="XYPRO Guest Speaker">
 
                 <div class="event-info">
                     <h3>XYPRO Guest Speaker</h3>
-                    <p>Leadership, cybersecurity & industry insights.</p>
+                    <p>
+                        Leadership, cybersecurity & industry insights.
+                    </p>
                 </div>
+
             </div>
 
 
             <!-- GOOGLE -->
             <div class="event-card">
-                <img src="./events/google_ai_tech_meeting.jpeg"
-                     alt="Google AI Tech Meeting">
+
+                <img
+                    src="./events/google_ai_tech_meeting.jpeg"
+                    alt="Google AI Tech Meeting">
 
                 <div class="event-info">
                     <h3>Google AI Tech Meeting</h3>
-                    <p>Exploring AI, technology & industry trends.</p>
+                    <p>
+                        Exploring AI, technology & industry trends.
+                    </p>
                 </div>
+
             </div>
 
 
             <!-- COMMUNITY -->
             <div class="event-card">
-                <img src="./events/misa_student_community.jpeg"
-                     alt="MISA Community Event">
+
+                <img
+                    src="./events/misa_student_community.jpeg"
+                    alt="MISA Community Event">
 
                 <div class="event-info">
                     <h3>MISA Community Event</h3>
-                    <p>Connecting students and building community.</p>
+                    <p>
+                        Connecting students and building community.
+                    </p>
                 </div>
+
             </div>
 
 
             <!-- EVENING WITH INDUSTRY -->
             <div class="event-card">
-                <img src="./events/evening_with_industry.jpg"
-                     alt="Evening with Industry">
+
+                <img
+                    src="./events/evening_with_industry.jpg"
+                    alt="Evening with Industry">
 
                 <div class="event-info">
                     <h3>Evening with Industry</h3>
-                    <p>Networking, recognition & industry connections.</p>
+                    <p>
+                        Networking, recognition & industry connections.
+                    </p>
                 </div>
+
             </div>
 
         </div>
@@ -302,6 +459,7 @@
     <section class="instagram-box">
 
         <div class="instagram-text">
+
             <small>STAY CONNECTED</small>
 
             <h2>Follow us on Instagram</h2>
@@ -309,13 +467,17 @@
             <p>
                 Get the latest event updates and meeting reminders.
             </p>
+
         </div>
 
-        <a class="instagram-button"
-           href="https://www.instagram.com/csunmisa"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+            class="instagram-button"
+            href="https://www.instagram.com/csunmisa"
+            target="_blank"
+            rel="noopener noreferrer">
+
             Follow @csunmisa →
+
         </a>
 
     </section>
