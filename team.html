@@ -10,17 +10,30 @@
     <link rel="icon" type="image/png" href="./pictures/misaTab.png">
 
     <style>
-        /* GRADUATING SENIORS */
+
+        /* GRADUATING SENIORS SECTION */
         .graduating-seniors {
-            background: #fff5f6;
-            padding: 65px 30px 75px;
+            position: relative;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.78),
+                    rgba(255, 255, 255, 0.78)
+                ),
+                url("./pictures/graduating_seniors_background.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 70px 30px 80px;
             text-align: center;
         }
 
         .graduating-seniors h2 {
             font-size: 38px;
-            margin: 0 0 12px;
             color: #222;
+            margin: 0 0 12px;
         }
 
         .senior-red-line {
@@ -28,7 +41,7 @@
             height: 4px;
             background: #e31837;
             border-radius: 20px;
-            margin: 0 auto 40px;
+            margin: 0 auto 42px;
         }
 
         .senior-grid {
@@ -42,6 +55,7 @@
 
         .graduating-seniors .team-card {
             width: 300px;
+            background: white;
         }
 
         .graduating-seniors .team-card img {
@@ -61,8 +75,16 @@
 
         /* MOBILE */
         @media (max-width: 700px) {
+
             .graduating-seniors {
                 padding: 50px 20px 60px;
+
+                background-image:
+                    linear-gradient(
+                        rgba(255, 255, 255, 0.82),
+                        rgba(255, 255, 255, 0.82)
+                    ),
+                    url("./pictures/graduating_seniors_background.jpg");
             }
 
             .graduating-seniors h2 {
@@ -80,6 +102,7 @@
                 max-width: 320px;
             }
         }
+
     </style>
 </head>
 
@@ -89,9 +112,10 @@
 <nav class="navbar">
 
     <div class="logo-container">
-        <img src="./pictures/misalogo.png"
-             class="logo-img"
-             alt="MISA Logo">
+        <img
+            src="./pictures/misalogo.png"
+            class="logo-img"
+            alt="MISA Logo">
 
         <span class="logo-text">CSUN MISA</span>
     </div>
@@ -118,11 +142,13 @@
 
     <div class="team-grid">
 
+
         <!-- PRESIDENT -->
         <div class="team-card">
 
-            <img src="./pictures/president_2026.jpeg"
-                 alt="Hazel Oo">
+            <img
+                src="./pictures/president_2026.jpeg"
+                alt="Hazel Oo">
 
             <div class="team-info">
                 <h3>Hazel Oo</h3>
@@ -135,8 +161,9 @@
         <!-- VP OF FINANCE -->
         <div class="team-card">
 
-            <img src="./pictures/vp_finance_2026.jpg"
-                 alt="Karie Lam">
+            <img
+                src="./pictures/vp_finance_2026.jpg"
+                alt="Karie Lam">
 
             <div class="team-info">
                 <h3>Karie Lam</h3>
@@ -149,8 +176,9 @@
         <!-- VP OF PROFESSIONAL DEVELOPMENT -->
         <div class="team-card">
 
-            <img src="./pictures/vp_professional_development_2026.jpg"
-                 alt="Chris Kraijian">
+            <img
+                src="./pictures/vp_professional_development_2026.jpg"
+                alt="Chris Kraijian">
 
             <div class="team-info">
                 <h3>Chris Kraijian</h3>
@@ -163,8 +191,9 @@
         <!-- VP OF ADMINISTRATION -->
         <div class="team-card">
 
-            <img src="./pictures/vp_administration_2026.jpg"
-                 alt="Chris Riley">
+            <img
+                src="./pictures/vp_administration_2026.jpg"
+                alt="Chris Riley">
 
             <div class="team-info">
                 <h3>Chris Riley</h3>
@@ -174,15 +203,16 @@
         </div>
 
 
-        <!-- SECRETARY / VP OF COMMUNICATIONS -->
+        <!-- DIRECTOR OF TECHNOLOGY -->
         <div class="team-card">
 
-            <img src="./pictures/secretary_communications_2026.JPEG"
-                 alt="Krisha Sakariya">
+            <img
+                src="./pictures/director_technology_2026.jpeg"
+                alt="Bushra Mohib">
 
             <div class="team-info">
-                <h3>Krisha Sakariya</h3>
-                <p>Secretary / VP of Communications</p>
+                <h3>Bushra Mohib</h3>
+                <p>Director of Technology</p>
             </div>
 
         </div>
@@ -191,8 +221,9 @@
         <!-- DIRECTOR OF MARKETING -->
         <div class="team-card">
 
-            <img src="./pictures/director_marketing_2026.jpg"
-                 alt="Ryan Nadonga">
+            <img
+                src="./pictures/director_marketing_2026.jpg"
+                alt="Ryan Nadonga">
 
             <div class="team-info">
                 <h3>Ryan Nadonga</h3>
@@ -205,8 +236,9 @@
         <!-- DIRECTOR OF MEMBERSHIP -->
         <div class="team-card">
 
-            <img src="./pictures/director_membership_2026.jpg"
-                 alt="Aidar Bagrov">
+            <img
+                src="./pictures/director_membership_2026.jpg"
+                alt="Aidar Bagrov">
 
             <div class="team-info">
                 <h3>Aidar Bagrov</h3>
@@ -216,18 +248,20 @@
         </div>
 
 
-        <!-- DIRECTOR OF TECHNOLOGY -->
+        <!-- SECRETARY / VP OF COMMUNICATIONS -->
         <div class="team-card">
 
-            <img src="./pictures/director_technology_2026.jpeg"
-                 alt="Bushra Mohib">
+            <img
+                src="./pictures/secretary_communications_2026.JPEG"
+                alt="Krisha Sakariya">
 
             <div class="team-info">
-                <h3>Bushra Mohib</h3>
-                <p>Director of Technology</p>
+                <h3>Krisha Sakariya</h3>
+                <p>Secretary / VP of Communications</p>
             </div>
 
         </div>
+
 
     </div>
 
@@ -243,11 +277,13 @@
 
     <div class="senior-grid">
 
+
         <!-- HAZEL OO -->
         <div class="team-card">
 
-            <img src="./pictures/president_2026.jpeg"
-                 alt="Hazel Oo">
+            <img
+                src="./pictures/president_2026.jpeg"
+                alt="Hazel Oo">
 
             <div class="team-info">
                 <h3>Hazel Oo</h3>
@@ -260,8 +296,9 @@
         <!-- CHRIS RILEY -->
         <div class="team-card">
 
-            <img src="./pictures/vp_administration_2026.jpg"
-                 alt="Chris Riley">
+            <img
+                src="./pictures/vp_administration_2026.jpg"
+                alt="Chris Riley">
 
             <div class="team-info">
                 <h3>Chris Riley</h3>
@@ -270,12 +307,12 @@
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 CSUN MISA</p>
 </footer>
