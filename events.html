@@ -64,149 +64,238 @@
             margin-top: 24px;
         }
 
-
-        /* UPCOMING EVENTS */
-        .upcoming-section {
+        /* FALL CALENDAR */
+        .calendar-section {
             margin-top: 55px;
         }
 
-        .upcoming-heading {
+        .calendar-label {
+            color: #d7193f;
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #d7193f;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
-        .upcoming-card {
-            background: #fff1f3;
-            border-radius: 16px;
-            padding: 32px 36px;
-        }
-
-        .upcoming-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .meeting-type {
-            color: #d7193f;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .upcoming-card h2 {
-            margin: 0 0 4px;
-            font-size: 31px;
+        .calendar-section h2 {
+            font-size: 38px;
+            margin: 0 0 6px;
             color: #222;
         }
 
-        .speaker {
-            margin: 0;
-            color: #555;
-            font-size: 17px;
+        .calendar-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin: 0 0 28px;
         }
 
-        /* CALENDAR BUTTON */
-        .calendar-button {
+        /* MONTH BUTTONS */
+        .month-tabs {
             display: flex;
-            align-items: center;
-            gap: 13px;
+            gap: 10px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
 
+        .month-tab {
+            border: 1px solid #ddd;
             background: white;
-            border: 1px solid #ead4d8;
-            border-radius: 12px;
-
-            padding: 13px 18px;
+            color: #444;
+            padding: 10px 22px;
+            border-radius: 8px;
             cursor: pointer;
-
+            font-size: 15px;
+            font-weight: 600;
             font-family: inherit;
-            color: #222;
-
             transition: 0.2s ease;
         }
 
-        .calendar-button:hover {
+        .month-tab:hover {
+            border-color: #d7193f;
+            color: #d7193f;
+        }
+
+        .month-tab.active {
+            background: #d7193f;
+            color: white;
             border-color: #d7193f;
         }
 
-        .calendar-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 9px;
-            background: #d7193f;
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 22px;
-        }
-
-        .calendar-text {
-            text-align: left;
-        }
-
-        .calendar-date {
-            display: block;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .view-details {
-            display: block;
-            color: #d7193f;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* HIDDEN DETAILS */
-        .meeting-details {
-            display: none;
-
-            margin-top: 25px;
-            padding-top: 25px;
-
-            border-top: 1px solid #e5cdd1;
-
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .meeting-details.show {
-            display: grid;
-        }
-
-        .detail-box {
+        /* CALENDAR BOX */
+        .calendar-container {
             background: white;
-            padding: 17px 20px;
-            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
         }
 
-        .detail-label {
+        .calendar-month-title {
+            font-size: 25px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 22px;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        .calendar-weekdays div {
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 7px;
+        }
+
+        .calendar-day {
+            min-height: 85px;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            background: #fafafa;
+            border: 1px solid transparent;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .calendar-day.empty {
+            background: transparent;
+        }
+
+        /* DAYS WITH EVENTS */
+        .calendar-day.has-event {
+            background: #fff1f3;
+            border: 1px solid #f3cbd2;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .calendar-day.has-event:hover {
+            border-color: #d7193f;
+            transform: translateY(-2px);
+        }
+
+        .calendar-day.has-event .day-number {
+            color: #d7193f;
+            font-weight: 800;
+        }
+
+        .calendar-day.selected {
+            background: #d7193f;
+            border-color: #d7193f;
+            color: white;
+        }
+
+        .calendar-day.selected .day-number,
+        .calendar-day.selected .mini-event {
+            color: white;
+        }
+
+        .day-number {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .mini-event {
             display: block;
+            margin-top: 9px;
             color: #d7193f;
             font-size: 11px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
+            line-height: 1.25;
         }
 
-        .detail-value {
-            font-size: 16px;
+        /* PAST EVENT DAYS */
+        .calendar-day.past-event {
+            background: #f3f3f3;
+            border-color: #e5e5e5;
+        }
+
+        .calendar-day.past-event .day-number,
+        .calendar-day.past-event .mini-event {
+            color: #999;
+        }
+
+        .calendar-day.past-event.selected {
+            background: #777;
+            border-color: #777;
+        }
+
+        .calendar-day.past-event.selected .day-number,
+        .calendar-day.past-event.selected .mini-event {
+            color: white;
+        }
+
+        /* EVENT DETAIL PANEL */
+        .calendar-event-details {
+            display: none;
+            margin-top: 20px;
+            background: #fff1f3;
+            border-radius: 14px;
+            padding: 25px 28px;
+        }
+
+        .calendar-event-details.show {
+            display: block;
+        }
+
+        .event-status {
+            display: inline-block;
+            color: #d7193f;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .calendar-event-details h3 {
+            margin: 0 0 4px;
+            font-size: 25px;
             color: #222;
+        }
+
+        .event-company {
+            margin: 0 0 15px;
+            color: #555;
+            font-size: 16px;
             font-weight: 600;
         }
 
+        .event-topic {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 0 18px;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .event-meta-item {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .event-meta-item strong {
+            color: #d7193f;
+        }
 
         /* PAST EVENTS */
         .past-events {
@@ -271,14 +360,12 @@
             line-height: 1.5;
         }
 
-
         /* INSTAGRAM */
         .instagram-box {
             margin-top: 55px;
             background: #fff1f3;
             border-radius: 16px;
             padding: 35px 40px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -317,10 +404,8 @@
             opacity: 0.9;
         }
 
-
         /* MOBILE */
         @media (max-width: 800px) {
-
             .events-page {
                 padding: 50px 22px;
             }
@@ -329,21 +414,42 @@
                 font-size: 42px;
             }
 
-            .upcoming-card {
-                padding: 25px 22px;
+            .calendar-section h2 {
+                font-size: 31px;
             }
 
-            .upcoming-card-top {
+            .calendar-container {
+                padding: 16px 10px;
+            }
+
+            .calendar-grid {
+                gap: 3px;
+            }
+
+            .calendar-day {
+                min-height: 58px;
+                padding: 6px 4px;
+                text-align: center;
+            }
+
+            .calendar-weekdays div {
+                font-size: 10px;
+            }
+
+            .mini-event {
+                font-size: 8px;
+                margin-top: 5px;
+                overflow: hidden;
+            }
+
+            .month-tab {
+                flex: 1;
+                padding: 10px 8px;
+            }
+
+            .event-meta {
                 flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .calendar-button {
-                width: 100%;
-            }
-
-            .meeting-details.show {
-                grid-template-columns: 1fr;
+                gap: 8px;
             }
 
             .events-grid {
@@ -359,36 +465,26 @@
                 align-items: flex-start;
             }
         }
-
     </style>
 </head>
 
-
 <body>
-
 
 <!-- NAVIGATION -->
 <nav class="navbar">
-
     <div class="logo-container">
-
         <img
             src="./pictures/misalogo.png"
             class="logo-img"
             alt="MISA Logo">
 
         <span class="logo-text">CSUN MISA</span>
-
     </div>
 
     <ul class="nav-links">
-
         <li><a href="index.html">Home</a></li>
-
         <li><a href="team.html">Team</a></li>
-
         <li><a href="events.html">Events</a></li>
-
         <li><a href="careers.html">Careers</a></li>
 
         <li>
@@ -396,19 +492,14 @@
                 Join
             </a>
         </li>
-
     </ul>
-
 </nav>
-
 
 
 <main class="events-page">
 
-
     <!-- INTRO -->
     <section>
-
         <div class="events-label">
             Events & Announcements
         </div>
@@ -418,164 +509,132 @@
         </h1>
 
         <p class="events-intro">
-
             From industry speakers to technical meetings and socials,
             explore how MISA creates opportunities to learn, build connections,
             and be part of a growing community.
-
         </p>
 
         <div class="red-line"></div>
-
     </section>
 
 
+    <!-- FALL 2026 CALENDAR -->
+    <section class="calendar-section">
 
-    <!-- UPCOMING FALL 2026 -->
-    <section class="upcoming-section">
+        <div class="calendar-label">
+            Fall 2026
+        </div>
 
-        <div class="upcoming-heading">
-            Upcoming — Fall 2026
+        <h2>Meeting Calendar</h2>
+
+        <p class="calendar-subtitle">
+            Click a highlighted date to view meeting details. Meetings are held in BB 4117.
+        </p>
+
+        <div class="month-tabs">
+            <button class="month-tab active" data-month="8" type="button">
+                September
+            </button>
+
+            <button class="month-tab" data-month="9" type="button">
+                October
+            </button>
+
+            <button class="month-tab" data-month="10" type="button">
+                November
+            </button>
         </div>
 
 
-        <div class="upcoming-card">
+        <div class="calendar-container">
 
-
-            <div class="upcoming-card-top">
-
-
-                <div>
-
-                    <div class="meeting-type">
-                        Tech Meeting
-                    </div>
-
-                    <h2>
-                        Alan Sugano
-                    </h2>
-
-                    <p class="speaker">
-                        Founder & President, ADS Consulting Group
-                    </p>
-
-                </div>
-
-
-
-                <!-- CLICKABLE CALENDAR -->
-                <button
-                    class="calendar-button"
-                    id="meetingButton"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="meetingDetails">
-
-                    <div class="calendar-icon">
-                        📅
-                    </div>
-
-                    <div class="calendar-text">
-
-                        <span class="calendar-date">
-                            September 22
-                        </span>
-
-                        <span
-                            class="view-details"
-                            id="detailsText">
-
-                            View Meeting Details →
-
-                        </span>
-
-                    </div>
-
-                </button>
-
-
-            </div>
-
-
-
-            <!-- DETAILS THAT OPEN -->
             <div
-                class="meeting-details"
-                id="meetingDetails">
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Date
-                    </span>
-
-                    <span class="detail-value">
-                        September 22, 2026
-                    </span>
-
-                </div>
-
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Time
-                    </span>
-
-                    <span class="detail-value">
-                        2:30 PM – 4:00 PM
-                    </span>
-
-                </div>
-
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Location
-                    </span>
-
-                    <span class="detail-value">
-                        BB 4117
-                    </span>
-
-                </div>
-
-
+                class="calendar-month-title"
+                id="calendarMonthTitle">
+                September 2026
             </div>
 
+            <div class="calendar-weekdays">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
+            </div>
+
+            <div
+                class="calendar-grid"
+                id="calendarGrid">
+            </div>
+
+        </div>
+
+
+        <!-- CLICKED EVENT DETAILS -->
+        <div
+            class="calendar-event-details"
+            id="calendarEventDetails">
+
+            <span
+                class="event-status"
+                id="eventStatus">
+            </span>
+
+            <h3 id="eventSpeaker"></h3>
+
+            <p
+                class="event-company"
+                id="eventCompany">
+            </p>
+
+            <p
+                class="event-topic"
+                id="eventTopic">
+            </p>
+
+            <div class="event-meta">
+
+                <div class="event-meta-item">
+                    <strong>Date:</strong>
+                    <span id="eventDate"></span>
+                </div>
+
+                <div class="event-meta-item">
+                    <strong>Time:</strong>
+                    <span id="eventTime"></span>
+                </div>
+
+                <div class="event-meta-item">
+                    <strong>Location:</strong>
+                    BB 4117
+                </div>
+
+            </div>
 
         </div>
 
     </section>
-
 
 
     <!-- PAST EVENTS -->
     <section class="past-events">
 
-
         <div class="section-label">
             Past Events
         </div>
 
-
         <h2>
             Look Back at What We've Done
         </h2>
-
 
         <p class="past-events-subtitle">
             Take a look at some of our recent events and highlights.
         </p>
 
 
-
         <div class="events-grid">
-
 
             <!-- XYPRO -->
             <div class="event-card">
@@ -597,7 +656,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- GOOGLE -->
@@ -622,7 +680,6 @@
             </div>
 
 
-
             <!-- COMMUNITY -->
             <div class="event-card">
 
@@ -643,7 +700,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- EVENING WITH INDUSTRY -->
@@ -667,16 +723,13 @@
 
             </div>
 
-
         </div>
 
     </section>
 
 
-
     <!-- INSTAGRAM -->
     <section class="instagram-box">
-
 
         <div class="instagram-text">
 
@@ -694,7 +747,6 @@
 
         </div>
 
-
         <a
             class="instagram-button"
             href="https://www.instagram.com/csunmisa"
@@ -705,62 +757,414 @@
 
         </a>
 
-
     </section>
-
 
 </main>
 
 
-
 <footer>
-
     <p>
         © 2026 CSUN MISA
     </p>
-
 </footer>
 
 
-
-<!-- OPEN / CLOSE MEETING DETAILS -->
 <script>
 
-    const meetingButton =
-        document.getElementById("meetingButton");
+    /*
+        FALL 2026 MEETINGS
 
-    const meetingDetails =
-        document.getElementById("meetingDetails");
+        month numbers:
+        September = 8
+        October = 9
+        November = 10
+    */
 
-    const detailsText =
-        document.getElementById("detailsText");
+    const meetings = [
+
+        {
+            month: 8,
+            day: 22,
+            speaker: "Alan Sugano",
+            company: "President, ADS Consulting Group",
+            topic: "Cybersecurity, cloud services, IT infrastructure and disaster recovery.",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 8,
+            day: 29,
+            speaker: "Amy La",
+            company: "RSM",
+            topic: "",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 9,
+            day: 6,
+            speaker: "Kristina Galvez",
+            company: "",
+            topic: "Aerospace Supply Chain Careers",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 9,
+            day: 13,
+            speaker: "Julius",
+            company: "",
+            topic: "The IT Accounting You'll Need to Know + Game",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 9,
+            day: 27,
+            speaker: "Daisy Garcia",
+            company: "Founder & CEO, ImagineCRM",
+            topic: "Skills for Success, Technology in Your Role, and Opportunities for Students",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 10,
+            day: 3,
+            speaker: "Jennifer Duggan",
+            company: "XYPRO",
+            topic: "",
+            time: "2:30 PM – 4:00 PM"
+        },
+
+        {
+            month: 10,
+            day: 10,
+            speaker: "Chris Aguilar",
+            company: "",
+            topic: "",
+            time: "2:30 PM – 4:00 PM"
+        }
+
+    ];
 
 
-    meetingButton.addEventListener("click", function () {
+    const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
 
-        const isOpen =
-            meetingDetails.classList.toggle("show");
+
+    const calendarGrid =
+        document.getElementById("calendarGrid");
+
+    const calendarMonthTitle =
+        document.getElementById("calendarMonthTitle");
+
+    const calendarEventDetails =
+        document.getElementById("calendarEventDetails");
+
+    const eventStatus =
+        document.getElementById("eventStatus");
+
+    const eventSpeaker =
+        document.getElementById("eventSpeaker");
+
+    const eventCompany =
+        document.getElementById("eventCompany");
+
+    const eventTopic =
+        document.getElementById("eventTopic");
+
+    const eventDate =
+        document.getElementById("eventDate");
+
+    const eventTime =
+        document.getElementById("eventTime");
+
+    const monthTabs =
+        document.querySelectorAll(".month-tab");
 
 
-        meetingButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
+    let currentMonth = 8;
 
 
-        if (isOpen) {
+    function renderCalendar(month) {
 
-            detailsText.textContent =
-                "Hide Meeting Details ↑";
+        calendarGrid.innerHTML = "";
 
-        } else {
+        calendarEventDetails.classList.remove("show");
 
-            detailsText.textContent =
-                "View Meeting Details →";
+        calendarMonthTitle.textContent =
+            monthNames[month] + " 2026";
+
+
+        const firstDay =
+            new Date(2026, month, 1).getDay();
+
+        const daysInMonth =
+            new Date(2026, month + 1, 0).getDate();
+
+
+        /* EMPTY CELLS BEFORE MONTH STARTS */
+        for (let i = 0; i < firstDay; i++) {
+
+            const emptyDay =
+                document.createElement("div");
+
+            emptyDay.className =
+                "calendar-day empty";
+
+            calendarGrid.appendChild(emptyDay);
 
         }
 
+
+        /* ACTUAL DAYS */
+        for (let day = 1; day <= daysInMonth; day++) {
+
+            const dayBox =
+                document.createElement("div");
+
+            dayBox.className =
+                "calendar-day";
+
+
+            const dayNumber =
+                document.createElement("span");
+
+            dayNumber.className =
+                "day-number";
+
+            dayNumber.textContent =
+                day;
+
+            dayBox.appendChild(dayNumber);
+
+
+            const meeting =
+                meetings.find(function(item) {
+
+                    return (
+                        item.month === month &&
+                        item.day === day
+                    );
+
+                });
+
+
+            if (meeting) {
+
+                dayBox.classList.add("has-event");
+
+                const miniEvent =
+                    document.createElement("span");
+
+                miniEvent.className =
+                    "mini-event";
+
+                miniEvent.textContent =
+                    meeting.speaker;
+
+                dayBox.appendChild(miniEvent);
+
+
+                const meetingDate =
+                    new Date(
+                        2026,
+                        meeting.month,
+                        meeting.day,
+                        23,
+                        59,
+                        59
+                    );
+
+                const today =
+                    new Date();
+
+                if (meetingDate < today) {
+
+                    dayBox.classList.add(
+                        "past-event"
+                    );
+
+                }
+
+
+                dayBox.addEventListener(
+                    "click",
+                    function() {
+
+                        document
+                            .querySelectorAll(
+                                ".calendar-day"
+                            )
+                            .forEach(function(box) {
+
+                                box.classList.remove(
+                                    "selected"
+                                );
+
+                            });
+
+
+                        dayBox.classList.add(
+                            "selected"
+                        );
+
+
+                        showMeetingDetails(
+                            meeting
+                        );
+
+                    }
+                );
+
+            }
+
+
+            calendarGrid.appendChild(
+                dayBox
+            );
+
+        }
+
+    }
+
+
+    function showMeetingDetails(meeting) {
+
+        const meetingDate =
+            new Date(
+                2026,
+                meeting.month,
+                meeting.day,
+                23,
+                59,
+                59
+            );
+
+        const today =
+            new Date();
+
+
+        if (meetingDate < today) {
+
+            eventStatus.textContent =
+                "Past Meeting";
+
+        } else {
+
+            eventStatus.textContent =
+                "Upcoming Meeting";
+
+        }
+
+
+        eventSpeaker.textContent =
+            meeting.speaker;
+
+
+        if (meeting.company) {
+
+            eventCompany.textContent =
+                meeting.company;
+
+            eventCompany.style.display =
+                "block";
+
+        } else {
+
+            eventCompany.style.display =
+                "none";
+
+        }
+
+
+        if (meeting.topic) {
+
+            eventTopic.textContent =
+                meeting.topic;
+
+            eventTopic.style.display =
+                "block";
+
+        } else {
+
+            eventTopic.style.display =
+                "none";
+
+        }
+
+
+        eventDate.textContent =
+            monthNames[meeting.month] +
+            " " +
+            meeting.day +
+            ", 2026";
+
+
+        eventTime.textContent =
+            meeting.time;
+
+
+        calendarEventDetails.classList.add(
+            "show"
+        );
+
+    }
+
+
+    /* MONTH BUTTONS */
+    monthTabs.forEach(function(tab) {
+
+        tab.addEventListener(
+            "click",
+            function() {
+
+                monthTabs.forEach(
+                    function(button) {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                tab.classList.add(
+                    "active"
+                );
+
+
+                currentMonth =
+                    Number(
+                        tab.dataset.month
+                    );
+
+
+                renderCalendar(
+                    currentMonth
+                );
+
+            }
+        );
+
     });
+
+
+    /* LOAD SEPTEMBER FIRST */
+    renderCalendar(currentMonth);
 
 </script>
 
