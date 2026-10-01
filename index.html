@@ -31,7 +31,6 @@
             overflow: hidden;
         }
 
-        /* Dark fade at bottom of cover photo */
         .home-hero::after {
             content: "";
             position: absolute;
@@ -77,17 +76,12 @@
         .about-home {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 70px 45px;
-
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 70px;
-            align-items: center;
+            padding: 70px 45px 40px;
+            box-sizing: border-box;
         }
 
         .about-copy {
-            border-right: 1px solid #ddd;
-            padding-right: 55px;
+            max-width: 780px;
         }
 
         .small-red-line {
@@ -111,49 +105,156 @@
 
 
         /* =========================
-           HIGHLIGHTS
+           INTERACTIVE CARDS
         ========================== */
 
+        .highlights-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px 45px 70px;
+            box-sizing: border-box;
+        }
+
+        .highlights-label {
+            color: #e31837;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .highlights-title {
+            font-size: 30px;
+            margin: 0 0 25px;
+        }
+
         .misa-highlights {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
-
-        .highlight {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            align-items: flex-start;
         }
 
-        .highlight-icon {
-            min-width: 52px;
-            height: 52px;
-            border-radius: 50%;
+        .highlight-card {
+            position: relative;
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 14px;
+            padding: 25px 24px;
+            cursor: pointer;
+            overflow: hidden;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            border-color: #f0c2ca;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+        }
+
+        .highlight-card.active {
+            border-color: #e31837;
+            box-shadow: 0 10px 25px rgba(227, 24, 55, 0.10);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
             background: #fff0f3;
+            border-radius: 11px;
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
         }
 
-        .highlight-icon::after {
-            content: "";
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
+        .card-icon svg {
+            width: 23px;
+            height: 23px;
+            stroke: #e31837;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .highlight-card:hover .card-icon,
+        .highlight-card.active .card-icon {
             background: #e31837;
+            transform: scale(1.05);
         }
 
-        .highlight h3 {
-            margin: 0 0 6px;
+        .highlight-card:hover .card-icon svg,
+        .highlight-card.active .card-icon svg {
+            stroke: white;
+        }
+
+        .highlight-card h3 {
+            margin: 0 0 8px;
             font-size: 19px;
+            color: #222;
         }
 
-        .highlight p {
+        .card-short {
             margin: 0;
-            line-height: 1.5;
-            color: #444;
+            color: #555;
+            line-height: 1.55;
+            font-size: 14px;
+        }
+
+        .explore-link {
+            margin-top: 18px;
+            color: #e31837;
+            font-size: 13px;
+            font-weight: 700;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .explore-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .highlight-card:hover .explore-arrow {
+            transform: translateX(4px);
+        }
+
+        /* HIDDEN INFO */
+
+        .card-more {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+
+            color: #555;
+            font-size: 14px;
+            line-height: 1.55;
+
+            transition:
+                max-height 0.35s ease,
+                opacity 0.3s ease,
+                margin 0.3s ease;
+        }
+
+        .highlight-card.active .card-more {
+            max-height: 180px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .highlight-card.active .explore-arrow {
+            transform: rotate(90deg);
         }
 
 
@@ -252,32 +353,23 @@
             }
 
             .about-home {
-                grid-template-columns: 1fr;
-                padding: 50px 25px;
-                gap: 38px;
-            }
-
-            .about-copy {
-                border-right: none;
-                padding-right: 0;
+                padding: 50px 25px 30px;
             }
 
             .about-copy h2 {
                 font-size: 32px;
             }
 
+            .highlights-wrapper {
+                padding: 10px 25px 50px;
+            }
+
             .misa-highlights {
-                gap: 24px;
+                grid-template-columns: 1fr;
             }
 
-            .highlight-icon {
-                min-width: 45px;
-                height: 45px;
-            }
-
-            .highlight-icon::after {
-                width: 12px;
-                height: 12px;
+            .highlight-card:hover {
+                transform: none;
             }
 
             .join-wrapper {
@@ -302,10 +394,6 @@
         }
 
 
-        /* =========================
-           SMALL PHONES
-        ========================== */
-
         @media (max-width: 480px) {
 
             .home-hero {
@@ -321,7 +409,15 @@
             }
 
             .about-home {
-                padding: 42px 20px;
+                padding: 42px 20px 28px;
+            }
+
+            .highlights-wrapper {
+                padding: 5px 20px 45px;
+            }
+
+            .highlights-title {
+                font-size: 26px;
             }
         }
 
@@ -337,22 +433,37 @@
 <nav class="navbar">
 
     <div class="logo-container">
-        <img src="./pictures/misalogo.png"
-             class="logo-img"
-             alt="MISA Logo">
+
+        <img
+            src="./pictures/misalogo.png"
+            class="logo-img"
+            alt="MISA Logo">
 
         <span class="logo-text">CSUN MISA</span>
+
     </div>
 
+
     <ul class="nav-links">
+
         <li><a href="index.html">Home</a></li>
+
         <li><a href="team.html">Team</a></li>
+
         <li><a href="events.html">Events</a></li>
+
         <li><a href="careers.html">Careers</a></li>
-        <li><a href="#join" class="btn">Join</a></li>
+
+        <li>
+            <a href="#join" class="btn">
+                Join
+            </a>
+        </li>
+
     </ul>
 
 </nav>
+
 
 
 <!-- HERO -->
@@ -372,6 +483,7 @@
     </div>
 
 </section>
+
 
 
 <!-- ABOUT -->
@@ -399,71 +511,225 @@
 
     </div>
 
+</section>
+
+
+
+<!-- INTERACTIVE HIGHLIGHTS -->
+
+<section class="highlights-wrapper">
+
+    <div class="highlights-label">
+        Why MISA
+    </div>
+
+    <h2 class="highlights-title">
+        More than just a student organization.
+    </h2>
+
 
     <div class="misa-highlights">
 
-        <div class="highlight">
 
-            <div class="highlight-icon"></div>
+        <!-- PROFESSIONAL DEVELOPMENT -->
 
-            <div>
-                <h3>Professional Development</h3>
+        <div
+            class="highlight-card"
+            tabindex="0"
+            role="button"
+            aria-expanded="false">
 
-                <p>
-                    Gain real-world insights from industry professionals.
-                </p>
+            <div class="card-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+
+                    <circle cx="9" cy="7" r="4"></circle>
+
+                    <path d="M16 11l2 2 4-4"></path>
+
+                </svg>
+
+            </div>
+
+
+            <h3>
+                Professional Development
+            </h3>
+
+
+            <p class="card-short">
+                Gain real-world insights from industry professionals.
+            </p>
+
+
+            <div class="card-more">
+                Hear directly from professionals through guest speakers,
+                career-focused meetings, workshops, and conversations about
+                today's technology and business industries.
+            </div>
+
+
+            <div class="explore-link">
+
+                <span class="explore-text">
+                    Explore
+                </span>
+
+                <span class="explore-arrow">
+                    →
+                </span>
+
             </div>
 
         </div>
 
 
-        <div class="highlight">
 
-            <div class="highlight-icon"></div>
+        <!-- TECHNICAL LEARNING -->
 
-            <div>
-                <h3>Technical Learning</h3>
+        <div
+            class="highlight-card"
+            tabindex="0"
+            role="button"
+            aria-expanded="false">
 
-                <p>
-                    Explore data analytics, cybersecurity,
-                    IT audit, systems analysis, and more.
-                </p>
+            <div class="card-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="13"
+                        rx="2">
+                    </rect>
+
+                    <path d="M8 21h8"></path>
+
+                    <path d="M12 17v4"></path>
+
+                </svg>
+
+            </div>
+
+
+            <h3>
+                Technical Learning
+            </h3>
+
+
+            <p class="card-short">
+                Explore technology and the different paths within information systems.
+            </p>
+
+
+            <div class="card-more">
+                Learn more about areas such as data analytics,
+                cybersecurity, IT audit, systems analysis, and other
+                technology-focused career paths.
+            </div>
+
+
+            <div class="explore-link">
+
+                <span class="explore-text">
+                    Explore
+                </span>
+
+                <span class="explore-arrow">
+                    →
+                </span>
+
             </div>
 
         </div>
 
 
-        <div class="highlight">
 
-            <div class="highlight-icon"></div>
+        <!-- NETWORKING -->
 
-            <div>
-                <h3>Networking Opportunities</h3>
+        <div
+            class="highlight-card"
+            tabindex="0"
+            role="button"
+            aria-expanded="false">
 
-                <p>
-                    Build connections with students,
-                    alumni, and industry professionals.
-                </p>
+            <div class="card-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <circle cx="9" cy="7" r="4"></circle>
+
+                    <path d="M3 21v-2a6 6 0 0 1 12 0v2"></path>
+
+                    <circle cx="17" cy="8" r="3"></circle>
+
+                    <path d="M17 14a5 5 0 0 1 5 5v2"></path>
+
+                </svg>
+
+            </div>
+
+
+            <h3>
+                Networking Opportunities
+            </h3>
+
+
+            <p class="card-short">
+                Build connections with students, alumni, and industry professionals.
+            </p>
+
+
+            <div class="card-more">
+                Meet people with similar interests, connect with professionals,
+                and grow your network through MISA meetings, events, and
+                community opportunities.
+            </div>
+
+
+            <div class="explore-link">
+
+                <span class="explore-text">
+                    Explore
+                </span>
+
+                <span class="explore-arrow">
+                    →
+                </span>
+
             </div>
 
         </div>
+
 
     </div>
 
 </section>
 
 
+
 <!-- JOIN -->
 
-<section id="join" class="join-wrapper">
+<section
+    id="join"
+    class="join-wrapper">
 
     <div class="join-home">
 
+
         <div class="join-copy">
 
-            <small>GET INVOLVED</small>
+            <small>
+                GET INVOLVED
+            </small>
 
-            <h2>Be part of what's next.</h2>
+            <h2>
+                Be part of what's next.
+            </h2>
 
             <p>
                 Connect, learn, and grow with the MISA community.
@@ -477,21 +743,113 @@
             target="_blank"
             rel="noopener noreferrer"
             class="join-button">
+
             Join MISA →
+
         </a>
+
 
     </div>
 
 </section>
 
 
+
 <!-- FOOTER -->
 
 <footer>
-    <p>© 2026 CSUN MISA</p>
+
+    <p>
+        © 2026 CSUN MISA
+    </p>
+
 </footer>
 
 
-</body>
 
+<script>
+
+    const cards =
+        document.querySelectorAll(".highlight-card");
+
+
+    function toggleCard(card) {
+
+        const isAlreadyOpen =
+            card.classList.contains("active");
+
+
+        cards.forEach(function(otherCard) {
+
+            otherCard.classList.remove("active");
+
+            otherCard.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            const text =
+                otherCard.querySelector(".explore-text");
+
+            text.textContent =
+                "Explore";
+
+        });
+
+
+        if (!isAlreadyOpen) {
+
+            card.classList.add("active");
+
+            card.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            card.querySelector(
+                ".explore-text"
+            ).textContent =
+                "Close";
+
+        }
+
+    }
+
+
+    cards.forEach(function(card) {
+
+        card.addEventListener(
+            "click",
+            function() {
+
+                toggleCard(card);
+
+            }
+        );
+
+
+        card.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    toggleCard(card);
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+
+</body>
 </html>
