@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="./pictures/misaTab.png">
 
     <style>
+
         html {
             scroll-behavior: smooth;
         }
@@ -18,8 +19,60 @@
             margin: 0;
         }
 
+
         /* =========================
-           MAIN HOME SECTION
+           HERO
+        ========================== */
+
+        .home-hero {
+            position: relative;
+            height: 540px;
+            background-image: url("./pictures/group_photo_fall_2026.jpeg");
+            background-size: cover;
+            background-position: center 45%;
+            overflow: hidden;
+        }
+
+        .home-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 45%,
+                rgba(0, 0, 0, 0.18) 65%,
+                rgba(0, 0, 0, 0.82) 100%
+            );
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 40px;
+            right: 40px;
+            bottom: 20px;
+            z-index: 2;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            margin: 0 0 7px;
+            color: white;
+            font-size: 38px;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            margin: 0;
+            color: white;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           WHY MISA
         ========================== */
 
         .home-main {
@@ -60,7 +113,7 @@
 
         .highlight-card {
             position: relative;
-            background: #fff;
+            background: white;
             border: 1px solid #dedede;
             border-radius: 14px;
             padding: 23px 24px 24px;
@@ -85,6 +138,9 @@
             border-color: #e31837;
             box-shadow: 0 10px 25px rgba(227, 24, 55, 0.10);
         }
+
+
+        /* CARD ICON */
 
         .card-icon {
             width: 48px;
@@ -121,8 +177,11 @@
 
         .highlight-card:hover .card-icon svg,
         .highlight-card.active .card-icon svg {
-            stroke: #fff;
+            stroke: white;
         }
+
+
+        /* CARD TEXT */
 
         .highlight-card h3 {
             margin: 0 0 10px;
@@ -157,6 +216,9 @@
             transform: translateX(4px);
         }
 
+
+        /* EXPANDED CARD INFO */
+
         .card-more {
             max-height: 0;
             opacity: 0;
@@ -184,35 +246,45 @@
 
 
         /* =========================
-           COMMUNITY SECTION
+           COMMUNITY / JOIN
         ========================== */
 
         .community-section {
             display: grid;
             grid-template-columns: 1.65fr 1fr;
-            margin-top: 20px;
+
+            margin-top: 25px;
+
             border-radius: 15px;
             overflow: hidden;
+
             background: #fff1f3;
             min-height: 345px;
         }
+
+
+        /* COMMUNITY IMAGE */
 
         .community-image {
             width: 100%;
             height: 100%;
             min-height: 345px;
+
             object-fit: cover;
             object-position: center;
+
             display: block;
         }
 
+
+        /* JOIN SIDE */
+
         .community-content {
-            background:
-                linear-gradient(
-                    135deg,
-                    #fff8f9 0%,
-                    #fff0f3 100%
-                );
+            background: linear-gradient(
+                135deg,
+                #fff8f9 0%,
+                #fff0f3 100%
+            );
 
             padding: 48px 45px;
 
@@ -224,26 +296,39 @@
 
         .community-content h2 {
             margin: 0 0 16px;
+
             font-size: 34px;
             line-height: 1.15;
+
             color: #151515;
         }
 
         .community-content p {
             margin: 0 0 25px;
+
             color: #646b77;
+
             font-size: 17px;
             line-height: 1.55;
+
             max-width: 360px;
         }
 
+
+        /* JOIN BUTTON */
+
         .join-button {
             display: inline-block;
+
             background: #e31837;
             color: white;
+
             text-decoration: none;
+
             padding: 13px 31px;
+
             border-radius: 9px;
+
             font-weight: 600;
             font-size: 16px;
 
@@ -255,16 +340,51 @@
 
         .join-button:hover {
             transform: translateY(-2px);
+
             background: #c91431;
-            box-shadow: 0 8px 18px rgba(227, 24, 55, 0.20);
+
+            box-shadow:
+                0 8px 18px rgba(227, 24, 55, 0.20);
         }
 
 
         /* =========================
-           MOBILE
+           TABLET
         ========================== */
 
         @media (max-width: 900px) {
+
+            .home-hero {
+                height: 430px;
+                background-position: center top;
+            }
+
+            .home-hero::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0) 35%,
+                    rgba(0, 0, 0, 0.25) 55%,
+                    rgba(0, 0, 0, 0.88) 100%
+                );
+            }
+
+            .hero-content {
+                left: 20px;
+                right: 20px;
+                bottom: 22px;
+            }
+
+            .hero-content h1 {
+                font-size: 27px;
+                line-height: 1.12;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+
 
             .home-main {
                 padding: 50px 25px 55px;
@@ -273,6 +393,7 @@
             .main-title {
                 font-size: 34px;
             }
+
 
             .misa-highlights {
                 grid-template-columns: 1fr;
@@ -286,14 +407,15 @@
                 transform: none;
             }
 
+
             .community-section {
                 grid-template-columns: 1fr;
-                margin-top: 25px;
+                margin-top: 30px;
             }
 
             .community-image {
-                min-height: 320px;
                 height: 320px;
+                min-height: 320px;
             }
 
             .community-content {
@@ -303,10 +425,28 @@
             .community-content h2 {
                 font-size: 30px;
             }
+
         }
 
 
+        /* =========================
+           SMALL PHONES
+        ========================== */
+
         @media (max-width: 480px) {
+
+            .home-hero {
+                height: 390px;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+            }
+
 
             .home-main {
                 padding: 42px 20px 45px;
@@ -321,9 +461,11 @@
                 margin-bottom: 22px;
             }
 
+
             .highlight-card {
                 padding: 21px;
             }
+
 
             .community-image {
                 height: 250px;
@@ -342,21 +484,27 @@
                 font-size: 15px;
             }
 
+
             .join-button {
                 width: 100%;
                 text-align: center;
                 box-sizing: border-box;
             }
+
         }
 
     </style>
+
 </head>
+
 
 
 <body>
 
 
-<!-- NAVBAR -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav class="navbar">
 
@@ -412,7 +560,31 @@
 
 
 
-<!-- MAIN HOME CONTENT -->
+<!-- =========================
+     ORIGINAL GROUP PHOTO HERO
+========================= -->
+
+<section class="home-hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Management Information Systems Association
+        </h1>
+
+        <p>
+            Empowering CSUN students through technology and business.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN HOME CONTENT
+========================= -->
 
 <main class="home-main">
 
@@ -430,7 +602,10 @@
         </h1>
 
 
-        <!-- INTERACTIVE CARDS -->
+
+        <!-- =========================
+             INTERACTIVE CARDS
+        ========================== -->
 
         <div class="misa-highlights">
 
@@ -522,9 +697,13 @@
                             rx="2">
                         </rect>
 
-                        <path d="M8 21h8"></path>
+                        <path
+                            d="M8 21h8">
+                        </path>
 
-                        <path d="M12 17v4"></path>
+                        <path
+                            d="M12 17v4">
+                        </path>
 
                     </svg>
 
@@ -543,9 +722,11 @@
 
                 <div class="card-more">
 
-                    Learn more about areas such as data analytics,
-                    cybersecurity, IT audit, systems analysis,
-                    and other technology-focused career paths.
+                    Learn more about areas such as
+                    data analytics, cybersecurity,
+                    IT audit, systems analysis,
+                    and other technology-focused
+                    career paths.
 
                 </div>
 
@@ -616,9 +797,9 @@
                 <div class="card-more">
 
                     Meet people with similar interests,
-                    connect with professionals, and grow your
-                    network through MISA meetings, events,
-                    and community opportunities.
+                    connect with professionals, and grow
+                    your network through MISA meetings,
+                    events, and community opportunities.
 
                 </div>
 
@@ -644,14 +825,16 @@
 
 
 
-    <!-- COMMUNITY / JOIN SECTION -->
+    <!-- =========================
+         COMMUNITY / JOIN
+    ========================== -->
 
     <section
         class="community-section"
         id="join">
 
 
-        <!-- IMAGE -->
+        <!-- CLASSROOM IMAGE -->
 
         <img
             src="./pictures/misa_community_2026.png"
@@ -659,7 +842,8 @@
             alt="Students attending a MISA technology meeting">
 
 
-        <!-- JOIN CONTENT -->
+
+        <!-- JOIN SIDE -->
 
         <div class="community-content">
 
@@ -687,6 +871,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -694,7 +879,9 @@
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -706,7 +893,9 @@
 
 
 
-<!-- INTERACTIVE CARD SCRIPT -->
+<!-- =========================
+     INTERACTIVE CARD SCRIPT
+========================= -->
 
 <script>
 
@@ -720,6 +909,10 @@
             card.classList.contains("active");
 
 
+        /*
+            Close all cards first
+        */
+
         cards.forEach(function(otherCard) {
 
             otherCard.classList.remove("active");
@@ -731,13 +924,21 @@
 
 
             const text =
-                otherCard.querySelector(".explore-text");
+                otherCard.querySelector(
+                    ".explore-text"
+                );
+
 
             text.textContent =
                 "Explore";
 
         });
 
+
+
+        /*
+            Open clicked card
+        */
 
         if (!isAlreadyOpen) {
 
@@ -759,6 +960,11 @@
     }
 
 
+
+    /*
+        CLICK
+    */
+
     cards.forEach(function(card) {
 
         card.addEventListener(
@@ -770,6 +976,11 @@
             }
         );
 
+
+
+        /*
+            KEYBOARD
+        */
 
         card.addEventListener(
             "keydown",
@@ -795,4 +1006,5 @@
 
 
 </body>
+
 </html>
