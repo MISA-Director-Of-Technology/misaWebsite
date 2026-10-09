@@ -19,88 +19,31 @@
         }
 
         /* =========================
-           HERO
+           MAIN HOME SECTION
         ========================== */
 
-        .home-hero {
-            position: relative;
-            height: 540px;
-            background-image: url("./pictures/group_photo_fall_2026.jpeg");
-            background-size: cover;
-            background-position: center 45%;
-            overflow: hidden;
-        }
-
-        .home-hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0) 45%,
-                rgba(0, 0, 0, 0.18) 65%,
-                rgba(0, 0, 0, 0.82) 100%
-            );
-        }
-
-        .hero-content {
-            position: absolute;
-            left: 40px;
-            right: 40px;
-            bottom: 20px;
-            z-index: 2;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            margin: 0 0 7px;
-            color: white;
-            font-size: 38px;
-            line-height: 1.1;
-            font-weight: 800;
-        }
-
-        .hero-content p {
-            margin: 0;
-            color: white;
-            font-size: 17px;
-            line-height: 1.5;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-home {
+        .home-main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 70px 45px 40px;
+            padding: 65px 45px 70px;
             box-sizing: border-box;
         }
 
-        .about-copy {
-            max-width: 780px;
+        .section-label {
+            color: #e31837;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
         }
 
-        .small-red-line {
-            width: 48px;
-            height: 4px;
-            background: #e31837;
-            border-radius: 20px;
-            margin-bottom: 18px;
-        }
-
-        .about-copy h2 {
-            margin: 0 0 20px;
-            font-size: 38px;
-        }
-
-        .about-copy p {
-            font-size: 16px;
-            line-height: 1.65;
-            margin: 0 0 16px;
+        .main-title {
+            margin: 0 0 28px;
+            font-size: 42px;
+            line-height: 1.12;
+            color: #111;
+            font-weight: 800;
         }
 
 
@@ -108,41 +51,24 @@
            INTERACTIVE CARDS
         ========================== */
 
-        .highlights-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5px 45px 70px;
-            box-sizing: border-box;
-        }
-
-        .highlights-label {
-            color: #e31837;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .highlights-title {
-            font-size: 30px;
-            margin: 0 0 25px;
-        }
-
         .misa-highlights {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
+            align-items: start;
         }
 
         .highlight-card {
             position: relative;
-            background: white;
-            border: 1px solid #e8e8e8;
+            background: #fff;
+            border: 1px solid #dedede;
             border-radius: 14px;
-            padding: 25px 24px;
+            padding: 23px 24px 24px;
             cursor: pointer;
             overflow: hidden;
+            min-height: 205px;
+            box-sizing: border-box;
+
             transition:
                 transform 0.25s ease,
                 box-shadow 0.25s ease,
@@ -151,8 +77,8 @@
 
         .highlight-card:hover {
             transform: translateY(-5px);
-            border-color: #f0c2ca;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+            border-color: #f0bcc6;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
         }
 
         .highlight-card.active {
@@ -163,14 +89,14 @@
         .card-icon {
             width: 48px;
             height: 48px;
-            background: #fff0f3;
             border-radius: 11px;
+            background: #fff0f3;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            margin-bottom: 18px;
+            margin-bottom: 17px;
 
             transition:
                 background 0.25s ease,
@@ -195,31 +121,32 @@
 
         .highlight-card:hover .card-icon svg,
         .highlight-card.active .card-icon svg {
-            stroke: white;
+            stroke: #fff;
         }
 
         .highlight-card h3 {
-            margin: 0 0 8px;
-            font-size: 19px;
-            color: #222;
+            margin: 0 0 10px;
+            font-size: 20px;
+            line-height: 1.25;
+            color: #171717;
         }
 
         .card-short {
             margin: 0;
-            color: #555;
-            line-height: 1.55;
-            font-size: 14px;
+            color: #666d79;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .explore-link {
-            margin-top: 18px;
+            margin-top: 22px;
             color: #e31837;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
 
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
         }
 
         .explore-arrow {
@@ -229,8 +156,6 @@
         .highlight-card:hover .explore-arrow {
             transform: translateX(4px);
         }
-
-        /* HIDDEN INFO */
 
         .card-more {
             max-height: 0;
@@ -259,43 +184,57 @@
 
 
         /* =========================
-           JOIN
+           COMMUNITY SECTION
         ========================== */
 
-        .join-wrapper {
-            max-width: 1200px;
-            margin: 0 auto 65px;
-            padding: 0 45px;
-            box-sizing: border-box;
+        .community-section {
+            display: grid;
+            grid-template-columns: 1.65fr 1fr;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff1f3;
+            min-height: 345px;
         }
 
-        .join-home {
-            background: #fff1f3;
-            border-radius: 16px;
-            padding: 38px 42px;
+        .community-image {
+            width: 100%;
+            height: 100%;
+            min-height: 345px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .community-content {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff8f9 0%,
+                    #fff0f3 100%
+                );
+
+            padding: 48px 45px;
 
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
         }
 
-        .join-copy small {
-            display: block;
-            color: #e31837;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+        .community-content h2 {
+            margin: 0 0 16px;
+            font-size: 34px;
+            line-height: 1.15;
+            color: #151515;
         }
 
-        .join-copy h2 {
-            margin: 0 0 8px;
-            font-size: 32px;
-        }
-
-        .join-copy p {
-            margin: 0;
-            line-height: 1.5;
+        .community-content p {
+            margin: 0 0 25px;
+            color: #646b77;
+            font-size: 17px;
+            line-height: 1.55;
+            max-width: 360px;
         }
 
         .join-button {
@@ -303,14 +242,21 @@
             background: #e31837;
             color: white;
             text-decoration: none;
-            padding: 14px 25px;
-            border-radius: 8px;
+            padding: 13px 31px;
+            border-radius: 9px;
             font-weight: 600;
-            white-space: nowrap;
+            font-size: 16px;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
         }
 
         .join-button:hover {
-            opacity: 0.9;
+            transform: translateY(-2px);
+            background: #c91431;
+            box-shadow: 0 8px 18px rgba(227, 24, 55, 0.20);
         }
 
 
@@ -320,104 +266,86 @@
 
         @media (max-width: 900px) {
 
-            .home-hero {
-                height: 430px;
-                background-position: center top;
+            .home-main {
+                padding: 50px 25px 55px;
             }
 
-            .home-hero::after {
-                background: linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, 0) 35%,
-                    rgba(0, 0, 0, 0.25) 55%,
-                    rgba(0, 0, 0, 0.88) 100%
-                );
-            }
-
-            .hero-content {
-                left: 20px;
-                right: 20px;
-                bottom: 22px;
-            }
-
-            .hero-content h1 {
-                font-size: 27px;
-                line-height: 1.12;
-                margin-bottom: 9px;
-            }
-
-            .hero-content p {
-                font-size: 14px;
-                max-width: 340px;
-                margin: 0 auto;
-            }
-
-            .about-home {
-                padding: 50px 25px 30px;
-            }
-
-            .about-copy h2 {
-                font-size: 32px;
-            }
-
-            .highlights-wrapper {
-                padding: 10px 25px 50px;
+            .main-title {
+                font-size: 34px;
             }
 
             .misa-highlights {
                 grid-template-columns: 1fr;
             }
 
+            .highlight-card {
+                min-height: auto;
+            }
+
             .highlight-card:hover {
                 transform: none;
             }
 
-            .join-wrapper {
-                padding: 0 20px;
-                margin-bottom: 45px;
+            .community-section {
+                grid-template-columns: 1fr;
+                margin-top: 25px;
             }
 
-            .join-home {
-                padding: 28px 24px;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 22px;
+            .community-image {
+                min-height: 320px;
+                height: 320px;
             }
 
-            .join-copy h2 {
-                font-size: 27px;
+            .community-content {
+                padding: 35px 30px;
             }
 
-            .join-button {
-                text-align: center;
+            .community-content h2 {
+                font-size: 30px;
             }
         }
 
 
         @media (max-width: 480px) {
 
-            .home-hero {
-                height: 390px;
+            .home-main {
+                padding: 42px 20px 45px;
             }
 
-            .hero-content h1 {
-                font-size: 24px;
+            .section-label {
+                font-size: 12px;
             }
 
-            .hero-content p {
-                font-size: 13px;
+            .main-title {
+                font-size: 29px;
+                margin-bottom: 22px;
             }
 
-            .about-home {
-                padding: 42px 20px 28px;
+            .highlight-card {
+                padding: 21px;
             }
 
-            .highlights-wrapper {
-                padding: 5px 20px 45px;
+            .community-image {
+                height: 250px;
+                min-height: 250px;
             }
 
-            .highlights-title {
-                font-size: 26px;
+            .community-content {
+                padding: 30px 24px;
+            }
+
+            .community-content h2 {
+                font-size: 27px;
+            }
+
+            .community-content p {
+                font-size: 15px;
+            }
+
+            .join-button {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
             }
         }
 
@@ -439,20 +367,38 @@
             class="logo-img"
             alt="MISA Logo">
 
-        <span class="logo-text">CSUN MISA</span>
+        <span class="logo-text">
+            CSUN MISA
+        </span>
 
     </div>
 
 
     <ul class="nav-links">
 
-        <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
 
-        <li><a href="team.html">Team</a></li>
+        <li>
+            <a href="team.html">
+                Team
+            </a>
+        </li>
 
-        <li><a href="events.html">Events</a></li>
+        <li>
+            <a href="events.html">
+                Events
+            </a>
+        </li>
 
-        <li><a href="careers.html">Careers</a></li>
+        <li>
+            <a href="careers.html">
+                Careers
+            </a>
+        </li>
 
         <li>
             <a href="#join" class="btn">
@@ -466,292 +412,285 @@
 
 
 
-<!-- HERO -->
+<!-- MAIN HOME CONTENT -->
 
-<section class="home-hero">
+<main class="home-main">
 
-    <div class="hero-content">
 
-        <h1>
-            Management Information Systems Association
+    <!-- WHY MISA -->
+
+    <section>
+
+        <div class="section-label">
+            Why MISA
+        </div>
+
+        <h1 class="main-title">
+            More than just a student organization.
         </h1>
 
-        <p>
-            Empowering CSUN students through technology and business.
-        </p>
 
-    </div>
+        <!-- INTERACTIVE CARDS -->
 
-</section>
+        <div class="misa-highlights">
 
 
+            <!-- PROFESSIONAL DEVELOPMENT -->
 
-<!-- ABOUT -->
+            <div
+                class="highlight-card"
+                tabindex="0"
+                role="button"
+                aria-expanded="false">
 
-<section class="about-home">
+                <div class="card-icon">
 
-    <div class="about-copy">
+                    <svg viewBox="0 0 24 24">
 
-        <div class="small-red-line"></div>
+                        <path
+                            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+                        </path>
 
-        <h2>About Us</h2>
+                        <circle
+                            cx="9"
+                            cy="7"
+                            r="4">
+                        </circle>
 
-        <p>
-            Management Information Systems Association (MISA) at the David
-            Nazarian College of Business and Economics at CSUN is a non-profit
-            student organization open to all students interested in the
-            information systems industry.
-        </p>
+                        <path
+                            d="M16 11l2 2 4-4">
+                        </path>
 
-        <p>
-            We aim to give students meaningful opportunities to learn,
-            grow, and connect through industry speakers, technical meetings,
-            professional workshops, networking opportunities, and more.
-        </p>
+                    </svg>
 
-    </div>
-
-</section>
-
-
-
-<!-- INTERACTIVE HIGHLIGHTS -->
-
-<section class="highlights-wrapper">
-
-    <div class="highlights-label">
-        Why MISA
-    </div>
-
-    <h2 class="highlights-title">
-        More than just a student organization.
-    </h2>
+                </div>
 
 
-    <div class="misa-highlights">
+                <h3>
+                    Professional Development
+                </h3>
 
 
-        <!-- PROFESSIONAL DEVELOPMENT -->
+                <p class="card-short">
+                    Learn from industry professionals.
+                </p>
 
-        <div
-            class="highlight-card"
-            tabindex="0"
-            role="button"
-            aria-expanded="false">
 
-            <div class="card-icon">
+                <div class="card-more">
 
-                <svg viewBox="0 0 24 24">
+                    Hear directly from professionals through
+                    guest speakers, career-focused meetings,
+                    workshops, and conversations about today's
+                    technology and business industries.
 
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                </div>
 
-                    <circle cx="9" cy="7" r="4"></circle>
 
-                    <path d="M16 11l2 2 4-4"></path>
+                <div class="explore-link">
 
-                </svg>
+                    <span class="explore-text">
+                        Explore
+                    </span>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <h3>
-                Professional Development
-            </h3>
+
+            <!-- TECHNICAL LEARNING -->
+
+            <div
+                class="highlight-card"
+                tabindex="0"
+                role="button"
+                aria-expanded="false">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <rect
+                            x="3"
+                            y="4"
+                            width="18"
+                            height="13"
+                            rx="2">
+                        </rect>
+
+                        <path d="M8 21h8"></path>
+
+                        <path d="M12 17v4"></path>
+
+                    </svg>
+
+                </div>
 
 
-            <p class="card-short">
-                Gain real-world insights from industry professionals.
-            </p>
+                <h3>
+                    Technical Learning
+                </h3>
 
 
-            <div class="card-more">
-                Hear directly from professionals through guest speakers,
-                career-focused meetings, workshops, and conversations about
-                today's technology and business industries.
+                <p class="card-short">
+                    Build skills through hands-on workshops.
+                </p>
+
+
+                <div class="card-more">
+
+                    Learn more about areas such as data analytics,
+                    cybersecurity, IT audit, systems analysis,
+                    and other technology-focused career paths.
+
+                </div>
+
+
+                <div class="explore-link">
+
+                    <span class="explore-text">
+                        Explore
+                    </span>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </div>
+
             </div>
 
 
-            <div class="explore-link">
 
-                <span class="explore-text">
-                    Explore
-                </span>
+            <!-- NETWORKING -->
 
-                <span class="explore-arrow">
-                    →
-                </span>
+            <div
+                class="highlight-card"
+                tabindex="0"
+                role="button"
+                aria-expanded="false">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <circle
+                            cx="9"
+                            cy="7"
+                            r="4">
+                        </circle>
+
+                        <path
+                            d="M3 21v-2a6 6 0 0 1 12 0v2">
+                        </path>
+
+                        <circle
+                            cx="17"
+                            cy="8"
+                            r="3">
+                        </circle>
+
+                        <path
+                            d="M17 14a5 5 0 0 1 5 5v2">
+                        </path>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Networking Opportunities
+                </h3>
+
+
+                <p class="card-short">
+                    Connect with students, alumni, and professionals.
+                </p>
+
+
+                <div class="card-more">
+
+                    Meet people with similar interests,
+                    connect with professionals, and grow your
+                    network through MISA meetings, events,
+                    and community opportunities.
+
+                </div>
+
+
+                <div class="explore-link">
+
+                    <span class="explore-text">
+                        Explore
+                    </span>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </div>
 
             </div>
+
 
         </div>
 
-
-
-        <!-- TECHNICAL LEARNING -->
-
-        <div
-            class="highlight-card"
-            tabindex="0"
-            role="button"
-            aria-expanded="false">
-
-            <div class="card-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <rect
-                        x="3"
-                        y="4"
-                        width="18"
-                        height="13"
-                        rx="2">
-                    </rect>
-
-                    <path d="M8 21h8"></path>
-
-                    <path d="M12 17v4"></path>
-
-                </svg>
-
-            </div>
-
-
-            <h3>
-                Technical Learning
-            </h3>
-
-
-            <p class="card-short">
-                Explore technology and the different paths within information systems.
-            </p>
-
-
-            <div class="card-more">
-                Learn more about areas such as data analytics,
-                cybersecurity, IT audit, systems analysis, and other
-                technology-focused career paths.
-            </div>
-
-
-            <div class="explore-link">
-
-                <span class="explore-text">
-                    Explore
-                </span>
-
-                <span class="explore-arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
+    </section>
 
 
 
-        <!-- NETWORKING -->
+    <!-- COMMUNITY / JOIN SECTION -->
 
-        <div
-            class="highlight-card"
-            tabindex="0"
-            role="button"
-            aria-expanded="false">
-
-            <div class="card-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <circle cx="9" cy="7" r="4"></circle>
-
-                    <path d="M3 21v-2a6 6 0 0 1 12 0v2"></path>
-
-                    <circle cx="17" cy="8" r="3"></circle>
-
-                    <path d="M17 14a5 5 0 0 1 5 5v2"></path>
-
-                </svg>
-
-            </div>
+    <section
+        class="community-section"
+        id="join">
 
 
-            <h3>
-                Networking Opportunities
-            </h3>
+        <!-- IMAGE -->
+
+        <img
+            src="./pictures/misa_community_2026.png"
+            class="community-image"
+            alt="Students attending a MISA technology meeting">
 
 
-            <p class="card-short">
-                Build connections with students, alumni, and industry professionals.
-            </p>
+        <!-- JOIN CONTENT -->
 
-
-            <div class="card-more">
-                Meet people with similar interests, connect with professionals,
-                and grow your network through MISA meetings, events, and
-                community opportunities.
-            </div>
-
-
-            <div class="explore-link">
-
-                <span class="explore-text">
-                    Explore
-                </span>
-
-                <span class="explore-arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- JOIN -->
-
-<section
-    id="join"
-    class="join-wrapper">
-
-    <div class="join-home">
-
-
-        <div class="join-copy">
-
-            <small>
-                GET INVOLVED
-            </small>
+        <div class="community-content">
 
             <h2>
-                Be part of what's next.
+                Find your community<br>
+                at MISA
             </h2>
 
+
             <p>
-                Connect, learn, and grow with the MISA community.
+                Learn, connect, and grow with students
+                who share your interests.
             </p>
+
+
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScq6v15FR52yysf7nASGjLbpA6NlcWWprDuV7j_1yjIT6qK6A/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="join-button">
+
+                Join MISA
+
+            </a>
 
         </div>
 
-
-        <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScq6v15FR52yysf7nASGjLbpA6NlcWWprDuV7j_1yjIT6qK6A/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="join-button">
-
-            Join MISA →
-
-        </a>
+    </section>
 
 
-    </div>
-
-</section>
+</main>
 
 
 
@@ -766,6 +705,8 @@
 </footer>
 
 
+
+<!-- INTERACTIVE CARD SCRIPT -->
 
 <script>
 
@@ -788,6 +729,7 @@
                 "false"
             );
 
+
             const text =
                 otherCard.querySelector(".explore-text");
 
@@ -805,6 +747,7 @@
                 "aria-expanded",
                 "true"
             );
+
 
             card.querySelector(
                 ".explore-text"
