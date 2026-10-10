@@ -108,7 +108,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            align-items: start;
+
+            /* keeps all three cards equal */
+            align-items: stretch;
         }
 
         .highlight-card {
@@ -116,11 +118,20 @@
             background: white;
             border: 1px solid #dedede;
             border-radius: 14px;
+
             padding: 23px 24px 24px;
+
             cursor: pointer;
             overflow: hidden;
-            min-height: 205px;
+
+            /* equal card height */
+            min-height: 270px;
+            height: 100%;
+
             box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
 
             transition:
                 transform 0.25s ease,
@@ -145,6 +156,8 @@
         .card-icon {
             width: 48px;
             height: 48px;
+            min-height: 48px;
+
             border-radius: 11px;
             background: #fff0f3;
 
@@ -197,9 +210,15 @@
             line-height: 1.5;
         }
 
+
+        /* EXPLORE */
+
         .explore-link {
-            margin-top: 22px;
+            margin-top: auto;
+            padding-top: 22px;
+
             color: #e31837;
+
             font-size: 14px;
             font-weight: 700;
 
@@ -253,12 +272,13 @@
             display: grid;
             grid-template-columns: 1.65fr 1fr;
 
-            margin-top: 25px;
+            margin-top: 30px;
 
             border-radius: 15px;
             overflow: hidden;
 
             background: #fff1f3;
+
             min-height: 345px;
         }
 
@@ -340,7 +360,6 @@
 
         .join-button:hover {
             transform: translateY(-2px);
-
             background: #c91431;
 
             box-shadow:
@@ -400,7 +419,7 @@
             }
 
             .highlight-card {
-                min-height: auto;
+                min-height: 230px;
             }
 
             .highlight-card:hover {
@@ -464,6 +483,7 @@
 
             .highlight-card {
                 padding: 21px;
+                min-height: 220px;
             }
 
 
@@ -498,13 +518,10 @@
 </head>
 
 
-
 <body>
 
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
@@ -560,9 +577,7 @@
 
 
 
-<!-- =========================
-     ORIGINAL GROUP PHOTO HERO
-========================= -->
+<!-- GROUP PHOTO HERO -->
 
 <section class="home-hero">
 
@@ -582,9 +597,7 @@
 
 
 
-<!-- =========================
-     MAIN HOME CONTENT
-========================= -->
+<!-- MAIN HOME -->
 
 <main class="home-main">
 
@@ -603,9 +616,7 @@
 
 
 
-        <!-- =========================
-             INTERACTIVE CARDS
-        ========================== -->
+        <!-- CARDS -->
 
         <div class="misa-highlights">
 
@@ -622,19 +633,11 @@
 
                     <svg viewBox="0 0 24 24">
 
-                        <path
-                            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
-                        </path>
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
 
-                        <circle
-                            cx="9"
-                            cy="7"
-                            r="4">
-                        </circle>
+                        <circle cx="9" cy="7" r="4"></circle>
 
-                        <path
-                            d="M16 11l2 2 4-4">
-                        </path>
+                        <path d="M16 11l2 2 4-4"></path>
 
                     </svg>
 
@@ -645,19 +648,16 @@
                     Professional Development
                 </h3>
 
-
                 <p class="card-short">
                     Learn from industry professionals.
                 </p>
 
 
                 <div class="card-more">
-
                     Hear directly from professionals through
                     guest speakers, career-focused meetings,
                     workshops, and conversations about today's
                     technology and business industries.
-
                 </div>
 
 
@@ -697,13 +697,9 @@
                             rx="2">
                         </rect>
 
-                        <path
-                            d="M8 21h8">
-                        </path>
+                        <path d="M8 21h8"></path>
 
-                        <path
-                            d="M12 17v4">
-                        </path>
+                        <path d="M12 17v4"></path>
 
                     </svg>
 
@@ -714,20 +710,16 @@
                     Technical Learning
                 </h3>
 
-
                 <p class="card-short">
                     Build skills through hands-on workshops.
                 </p>
 
 
                 <div class="card-more">
-
                     Learn more about areas such as
                     data analytics, cybersecurity,
                     IT audit, systems analysis,
-                    and other technology-focused
-                    career paths.
-
+                    and other technology-focused career paths.
                 </div>
 
 
@@ -759,25 +751,13 @@
 
                     <svg viewBox="0 0 24 24">
 
-                        <circle
-                            cx="9"
-                            cy="7"
-                            r="4">
-                        </circle>
+                        <circle cx="9" cy="7" r="4"></circle>
 
-                        <path
-                            d="M3 21v-2a6 6 0 0 1 12 0v2">
-                        </path>
+                        <path d="M3 21v-2a6 6 0 0 1 12 0v2"></path>
 
-                        <circle
-                            cx="17"
-                            cy="8"
-                            r="3">
-                        </circle>
+                        <circle cx="17" cy="8" r="3"></circle>
 
-                        <path
-                            d="M17 14a5 5 0 0 1 5 5v2">
-                        </path>
+                        <path d="M17 14a5 5 0 0 1 5 5v2"></path>
 
                     </svg>
 
@@ -788,19 +768,16 @@
                     Networking Opportunities
                 </h3>
 
-
                 <p class="card-short">
                     Connect with students, alumni, and professionals.
                 </p>
 
 
                 <div class="card-more">
-
                     Meet people with similar interests,
-                    connect with professionals, and grow
-                    your network through MISA meetings,
-                    events, and community opportunities.
-
+                    connect with professionals, and grow your
+                    network through MISA meetings, events,
+                    and community opportunities.
                 </div>
 
 
@@ -825,25 +802,18 @@
 
 
 
-    <!-- =========================
-         COMMUNITY / JOIN
-    ========================== -->
+    <!-- COMMUNITY + JOIN -->
 
     <section
         class="community-section"
         id="join">
 
 
-        <!-- CLASSROOM IMAGE -->
-
         <img
             src="./pictures/misa_community_2026.png"
             class="community-image"
             alt="Students attending a MISA technology meeting">
 
-
-
-        <!-- JOIN SIDE -->
 
         <div class="community-content">
 
@@ -871,7 +841,6 @@
 
         </div>
 
-
     </section>
 
 
@@ -879,9 +848,7 @@
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -893,9 +860,7 @@
 
 
 
-<!-- =========================
-     INTERACTIVE CARD SCRIPT
-========================= -->
+<!-- CARD INTERACTION -->
 
 <script>
 
@@ -909,10 +874,6 @@
             card.classList.contains("active");
 
 
-        /*
-            Close all cards first
-        */
-
         cards.forEach(function(otherCard) {
 
             otherCard.classList.remove("active");
@@ -922,23 +883,14 @@
                 "false"
             );
 
-
             const text =
-                otherCard.querySelector(
-                    ".explore-text"
-                );
-
+                otherCard.querySelector(".explore-text");
 
             text.textContent =
                 "Explore";
 
         });
 
-
-
-        /*
-            Open clicked card
-        */
 
         if (!isAlreadyOpen) {
 
@@ -949,7 +901,6 @@
                 "true"
             );
 
-
             card.querySelector(
                 ".explore-text"
             ).textContent =
@@ -959,11 +910,6 @@
 
     }
 
-
-
-    /*
-        CLICK
-    */
 
     cards.forEach(function(card) {
 
@@ -976,11 +922,6 @@
             }
         );
 
-
-
-        /*
-            KEYBOARD
-        */
 
         card.addEventListener(
             "keydown",
@@ -1006,5 +947,4 @@
 
 
 </body>
-
 </html>
